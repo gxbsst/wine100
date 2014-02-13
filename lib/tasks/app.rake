@@ -34,7 +34,7 @@ namespace :app do
 
       group_name, uuid = item[1].split('_') if item[1].present?
       region = item[2].split('>').delete_if {|i| i.blank? }.join('>') if item[2].present?
-      grape = item[3]
+      grape = item[3].gsub(/[_\/]/,'').gsub('1', '100%') if item[3].present?
       name_zh = item[4]
       name_en = item[0]
       vintage = item[7]

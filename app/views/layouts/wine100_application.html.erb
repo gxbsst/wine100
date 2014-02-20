@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<%= render '/refinery/html_tag' %>
+<head>
+  <meta charset='<%= Rails.application.config.encoding %>' />
+  <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+  <title><%#= browser_title(yield(:title)) %></title>
+
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "application"%>
+  <%= javascript_include_tag "applications" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<style type="text/css">
+    body {
+        padding-top: 120px;
+        padding-bottom: 40px;
+    }
+    .sidebar-nav {
+        padding: 9px 0;
+    }
+
+    @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+            float: none;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+    .navbar .navbar-inner {
+        height: 100px;
+    }
+</style>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h1 class="brand" href="#">
+        WINE100 葡萄酒酒录入系统
+      </h1>
+      <div class="nav-collapse collapse">
+        <p class="navbar-text pull-right">
+          <% if current_user %>
+              Logged in as <a href="#" class="navbar-link"><%= current_user.name %></a>
+              <%= link_to 'Logout', wine100_session_path(current_user), :method => :delete %>
+          <% else %>
+          <%= link_to "Log in", new_wine100_session_path %>
+          <% end %>
+        </p>
+
+        <!--<ul class="nav">-->
+          <!--<li class="active"><a href="#">Home</a></li>-->
+          <!--<li><a href="#about">About</a></li>-->
+          <!--<li><a href="#contact">Contact</a></li>-->
+        <!--</ul>-->
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+<%= yield %>
+
+  <footer>
+    <hr />
+    <p>&copy; 2013 <%= link_to 'WINE100.ORG', 'http://www.wine100.org/' %></p>
+  </footer>
+
+
+</div><!--/.fluid-container-->
+
+</body>
+</html>

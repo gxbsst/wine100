@@ -1,5 +1,19 @@
 Wine100::Application.routes.draw do
 
+  namespace :wine100 do 
+    resources :sessions
+    resources :registrations
+    resources :wine100
+    resources :wines
+    resources :accounts do 
+      collection do 
+        get :complete
+      end
+    end
+    resources :home
+    resources :profiles
+  end
+
   get "challenges/create"
 
   root :to => 'challenges#index'

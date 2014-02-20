@@ -1,0 +1,44 @@
+ <% flash.each do |name, msg| %>
+ <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+  <a class="close" data-dismiss="alert">×</a>
+  <%= msg %>
+</div>
+<% end %>
+
+<div class="row-fluid marketing">
+  <div class="span6">
+    <h4>登录</h4>
+    <%= form_for @user, :url => wine100_sessions_path, :class => 'form-signin' do |f| %>
+    <div class="controls">
+      <%= f.text_field :email, :placeholder => '邮箱', :class => 'block box' %>
+    </div>
+    <div class="controls">
+      <%= f.password_field :password, :placeholder => '密码' %>
+    </div>
+    <button class="btn btn-large btn-primary" type="submit">登录</button>
+    
+    <% end -%>
+  </div>
+
+  <div class="span6">
+    <h4>注册</h4>
+    <%= form_for @user, :url => wine100_registrations_path, :class => 'form-signin' do |f| %>
+    <div class="controls">
+      <%= f.text_field :email, :placeholder => '邮箱', :class => 'block box' %>
+    </div>
+    <div class="controls">
+      <%= f.text_field :phone, :placeholder => '手机号码', :class => 'block box' %>
+    </div>
+
+    <div class="controls">
+      <%= f.password_field :password_cleartext, :placeholder => '密码' %>
+    </div>
+
+    <div class="controls">
+      <%= f.password_field :password_confirmation, :placeholder => '确认密码' %>
+    </div>
+
+    <button class="btn btn-large btn-primary" type="submit">登录</button>
+    <% end %>
+  </div>
+</div>

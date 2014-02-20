@@ -1,0 +1,16 @@
+<div class="row-fluid">
+	<%= render 'wine100/accounts/sidebar' %>
+	<div class="span9">
+		<h2>注册 － 完整联系信息（*为必填)</h2>
+
+		<%= form_for @profile, :url => wine100_profiles_path, :class => 'form-signin' do |f| %>
+
+		<%= render 'form_contact', :f => f %>
+		<%= render 'form_company', :f => f %>
+		<%= render 'form_finance', :f => f %>
+	
+		<button class="btn btn-large btn-primary" type="submit">完成注册信息 》</button>
+		<% end %>
+
+	</div><!--/span-->
+</div>

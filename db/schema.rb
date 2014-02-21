@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140220135847) do
+ActiveRecord::Schema.define(:version => 20140221184707) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -245,9 +245,16 @@ ActiveRecord::Schema.define(:version => 20140220135847) do
     t.string   "finance_add"
     t.string   "finance_name"
     t.string   "finance_phone"
-    t.integer  "wine100_users_id"
+    t.integer  "wine100_user_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "wine100_sale_chanels", :force => true do |t|
+    t.string   "chanel"
+    t.integer  "wine100_wine_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "wine100_users", :force => true do |t|
@@ -264,6 +271,41 @@ ActiveRecord::Schema.define(:version => 20140220135847) do
     t.boolean  "is_completed",        :default => false
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+  end
+
+  create_table "wine100_varieties", :force => true do |t|
+    t.string   "culture"
+    t.string   "name_zh"
+    t.string   "name_en"
+    t.string   "pinyin"
+    t.string   "origin_name"
+    t.string   "percentage"
+    t.integer  "wine100_wine_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "wine100_wines", :force => true do |t|
+    t.string   "photo"
+    t.string   "style"
+    t.string   "name_zh"
+    t.string   "name_en"
+    t.string   "region_1"
+    t.string   "region_2"
+    t.string   "region_3"
+    t.string   "vintage"
+    t.string   "alcoholicity"
+    t.float    "market_price"
+    t.string   "winery_zh"
+    t.string   "winery_en"
+    t.string   "level"
+    t.string   "sweetness"
+    t.string   "barcode"
+    t.boolean  "is_oak",          :default => true
+    t.text     "prize_history"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "wine100_user_id"
   end
 
 end

@@ -1,0 +1,109 @@
+<% if params[:step] == '2' %>
+
+<div class="controls">
+	<%= f.text_field :winery_zh, :placeholder => '酒庄（中文）', :class => 'block box' %>
+</div>
+
+<div class="controls">
+	<%= f.text_field :winery_en, :placeholder => '酒庄（英文）', :class => 'block box' %>
+</div>
+
+<div class="controls">
+	<%= f.text_field :level, :placeholder => '等级', :class => 'block box' %>
+</div>
+
+<div class="controls">
+	<%= f.text_field :sweetness, :placeholder => '甜度', :class => 'block box' %>
+</div>
+
+<div class="controls">
+	<%= f.text_field :barcode, :placeholder => '条形码', :class => 'block box' %>
+</div>
+<br>
+<div class="controls">
+	<%= f.check_box :is_oak, :checked => true, :class => 'block box' %>
+	是否橡木桶陈酿
+</div>
+<br>
+<div class="controls">
+	<%= f.text_area :prize_history, :placeholder => '获奖记录', :style => 'width: 500px;', :class => 'block box ', :size => '50x10' %>
+</div>
+
+<ul class="pager">
+  <li><%= link_to("&larr;上一步".html_safe, edit_wine100_wine_path(@wine, :step => 1)) %></li>
+  <li>&nbsp;&nbsp;&nbsp;<button class="btn btn-large btn-primary" type="submit">完成</button></li>
+</ul>
+
+
+
+
+<% else %>
+<div class="controls">
+	<% if @wine.photo.blank? %>
+	<img data-src="holder.js/140x140" class="img-rounded" alt="酒标" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAFD0lEQVR4Xu3Y2ytsYRyH8d84n8rxxjkuCEVJDhF/Oy6Qcs6FiBtyapBjTrP7vTUTew/b155Xe6ZnrrZ891r1rE9r1pJIJpMp40OBLxZIAOaLpZiFAoABglQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxnkN5unpyTY2Nqy4uNgGBgastLQ06xVNJpP28PBgLS0t4fdXV1e2trZm/v8bGxttaGjIioqKPtXwk+f6n1nmNZj7+3s7ODiww8NDm5yctMrKyj9av7y82Pz8vPX29lpzc7M9Pj6Gn/3fbW1ttr6+buXl5TY6OvrpdfrJcwEmYgEHMTs7axMTE1nBbG5u2snJSbgDOZL9/X07Pj4Oe/+kAY2Njdnt7a1VVFRYbW1t+N3p6amVlZVZXV1d+DmX56qpqYlYJd6h8/oO41men59tbm4uKxiH4mD84nR0dISvpO3t7QCrq6srU3VhYSH8/vX11XZ2dmx6etru7u5seXnZRkZGMmByea7W1tZ4VzXikQsWTPrO0d/fbzc3N1ZVVWV+kZaWlgIOv9ukP47I7yr++5WVFfOvH///nZ2d1t3dndl9BOa754p4XaMdumDBLC4uhq+T4eHhcFdJg/A7TlNT0zswW1tbVl9fH8D4147fsfyraXx83BKJxF/BfPdc0a5qxAMXJJjd3d3wMPz7x59jLi4uwluVPwT7J5VKBSA9PT0B0dnZWXgQ9o8/51RXV38K5l/OFfG6Rjt0QYLxryB/HvGPvy7v7e2FO4Z/vTgYv6PMzMwEOP7Kvbq6Gn72j+Pp6+sLr97+0Ds1NZV55c72lfTdc5WUlES7qDEPnPdg/PnBL/JHr9Uez4H4V1J7e3u4o/hzjL8R+d9gzs/Pw93Gf+cPv/63HH/Q9Z2/fTU0NNjg4GC4Brk8V8yLGvPYeQ/G41xfX4c3obfPG2+j+UOs3038mSb9OTo6CgD82SX9Gn15eRn+nT6O/7HOYaVfq3N5rpgXNeaxCwJMzEAc+30BwCBCKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKvAL5pjypnvj9I4AAAAASUVORK5CYII=">
+
+<% else %>
+ <%= image_tag @wine.photo_url(:thumb), :size => '140x140' %>
+<% end %>
+
+	<%= f.file_field :photo %>
+</div>
+<br>
+
+
+<div class="controls">
+
+	<%= f.select :style, APP['wines']['styles'].each{|value| [value, value]}, :prompt => '葡萄酒类型' %>
+</div>
+
+<div class="controls">
+	<%= f.text_field :name_zh, :placeholder => '酒名称（中文）', :class => 'span3', :required => true %>
+	<%= f.text_field :name_en, :placeholder => '酒名称（英文）', :class => 'span3', :required => true %>
+</div>
+
+<div class="controls controls-row">
+	<%= f.text_field :region_1, :placeholder => '原产国', :class => 'span2', :required => true %>
+	<%= f.text_field :region_2, :placeholder => '产区', :class => 'span2',:required => true %>
+	<%= f.text_field :region_3, :placeholder => '第二产区', :class => 'span2', :required => true %>
+</div>
+
+
+<div class="controls">
+	<%= f.text_field :vintage, :placeholder => '年份', :class => 'block box' %>
+</div>
+
+<div class="controls">
+	<div class="input-prepend">
+	   <!-- <span class="add-on"><i class="icon">%</i></span> -->
+	   <%= f.text_field :alcoholicity, :placeholder => '酒精度', :class => 'block box' %>
+	</div>
+	
+</div>
+
+<div class="controls" >
+	<div class="variety_outer" >
+		<%= f.fields_for :varieties do |v| %>
+		<%= render "variety_fields", :f => v %>
+		<% end %>
+	</div>
+	<p><%= link_to_add_fields "添加葡萄品种", f, :varieties, '.variety_outer' %></p>
+</div>
+
+
+<div class="controls">
+	<%= f.text_field :market_price, :placeholder => '零售价', :class => 'block box' %>
+</div>
+
+
+<div class="controls" >
+	<div class="sale_chanel_outer" >
+		<%= f.fields_for :sale_chanels do |v| %>
+		<%= render "sale_chanel_fields", :f => v %>
+		<% end %>
+	</div>
+	<p><%= link_to_add_fields "添加销售渠道", f, :sale_chanels, '.sale_chanel_outer' %></p>
+</div>
+
+
+<button class="btn btn-large btn-primary" type="submit">下一步</button>
+<% end %>

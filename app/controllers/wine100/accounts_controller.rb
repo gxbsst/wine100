@@ -3,6 +3,7 @@ module Wine100
 	class AccountsController < ::Wine100::ApplicationController
 
 		before_filter :authenticate_user
+		before_filter :get_profile
 		
 		def index
 			
@@ -22,6 +23,13 @@ module Wine100
 		 	render :edit
 		 end
 		end
+
+		private 
+
+		def get_profile
+			@profile = current_user.profile || current_user.build_profile
+		end
+
 
 		# def complete
 		# 	@profile = current_user.profile || current_user.build_profile 

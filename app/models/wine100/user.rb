@@ -1,25 +1,22 @@
 # encoding: utf-8
 class Wine100::User < ActiveRecord::Base
-	 set_table_name :wine100_users
-    
-      has_one :profile, :class_name => "Wine100::Profile", :foreign_key => 'wine100_user_id'
 
-      # def profile
-      #   Wine100::Profile.find_or_initialize_by_wine100_user_id(self.id) || Wine100::Profile.new(:wine_user_id => self.id)
-      # end
+  set_table_name :wine100_users
 
+  has_many :wines, :class_name => 'Wine100::Wine', :foreign_key => 'wine100_user_id', :order => 'created_at DESC', :include => [:varieties, :sale_chanels]
+  has_one :profile, :class_name => "Wine100::Profile", :foreign_key => 'wine100_user_id', :dependent => :destroy
 
-	attr_accessible :name, :password, :email, :password_confirmation, :builder_id, 
-      :last_sign_in_at, :remember_created_at, :current_sign_in_ip, :last_sign_in_ip, 
-      :position, :password_cleartext,
-	  :phone
+  attr_accessible :name, :password, :email, :password_confirmation, :builder_id, 
+  :last_sign_in_at, :remember_created_at, :current_sign_in_ip, :last_sign_in_ip, 
+  :position, :password_cleartext,
+  :phone
 
 
-      has_secure_password
+  has_secure_password
 
 
-      acts_as_indexed :fields => [:name, :password_digest, :email, 
-      :password_cleartext, :current_sign_in_ip, :last_sign_in_ip]
+  acts_as_indexed :fields => [:name, :password_digest, :email, 
+    :password_cleartext, :current_sign_in_ip, :last_sign_in_ip]
 
       # validates :name, :presence => true, :uniqueness => true
 
@@ -35,4 +32,4 @@ class Wine100::User < ActiveRecord::Base
         self.password_confirmation = self.password_cleartext
       end
 
-end
+    end

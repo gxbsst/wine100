@@ -35,6 +35,8 @@ end
 
 gem 'jquery-rails', '~> 2.0.0'
 
+gem 'carrierwave'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -72,3 +74,5 @@ gem 'acts_as_xlsx'
 gem 'axlsx_rails'
 
 gem 'memcache-client'
+
+gem 'mini_magick'

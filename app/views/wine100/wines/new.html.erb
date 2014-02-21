@@ -1,0 +1,9 @@
+<div class="row-fluid">
+	<%= render '/wine100/accounts/sidebar' %>
+	<div class="span9">
+		<h3>  操作  /  添加酒（第一步）</h3>
+		<%= form_for @wine, :url => wine100_wines_path(:step => 1), :class => 'form-signin' do |f| %>
+		<%= render 'form', :f => f %>
+		<% end -%>
+	</div><!--/span-->
+</div>

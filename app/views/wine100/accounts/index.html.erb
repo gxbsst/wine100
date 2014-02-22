@@ -1,6 +1,42 @@
 <div class="row-fluid">
 	<%= render 'sidebar' %>
 	<div class="span9">
-		aa
+		<h3>酒列表</h3>
+		
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>酒标</th>
+					<th>名字</th>
+					<th>参数</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% if !@wines.blank? %>
+				<% @wines.each do |wine| %>
+				<tr>
+					<td><%= image_tag wine.photo_url(:thumb), :size => '100x100' %></td>
+					<td><%= wine.name %></td>
+					<td><%= raw wine.spec %></td>
+					<td>
+						<%= link_to '编辑', edit_wine100_wine_path(wine, :step => 1) %>
+						&nbsp;
+						&nbsp;
+						<%= link_to '删除', wine100_wine_path(wine), :method => :delete %>
+					</td>
+				</tr>
+				<% end %>
+				<% else %>
+				<tr>
+					<td>暂时没有酒		<%= link_to '去上传酒款', new_wine100_wine_path, :class => 'btn btn-large btn-primary' %></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<% end %>
+
+			</tbody>
+		</table>
 	</div><!--/span-->
 </div>

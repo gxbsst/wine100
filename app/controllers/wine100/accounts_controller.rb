@@ -6,7 +6,7 @@ module Wine100
 		before_filter :get_profile
 		
 		def index
-			
+			@wines = current_user.wines
 		end
 
 		def edit

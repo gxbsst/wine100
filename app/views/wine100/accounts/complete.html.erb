@@ -3,70 +3,13 @@
 	<div class="span9">
 		<h2>注册 － 完整联系信息（*为必填)</h2>
 
-		<%= form_for @profile, :url => wine100_registrations_path, :class => 'form-signin' do |f| %>
+		<%= form_for @profile, :url => wine100_profiles_path, :class => 'form-signin' do |f| %>
 
-		<h3>联系人信息</h3>
-		<div class="controls">
-		  <%= f.text_field :contact_name, :placeholder => '姓名', :class => 'block box' %>
-		</div>
-		<div class="controls">
-		  <%= f.text_field :contact_job, :placeholder => '职位', :class => 'block box' %>
-		</div>
+		<%= render 'wine100/profiles/form_contact', :f => f %>
+		
+		<%= render 'wine100/profiles/form_company', :f => f %>
 
-		<div class="controls">
-		  <%= f.text_field :contact_phone, :placeholder => '电话' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.email_field :contact_email, :placeholder => '邮箱' %>
-		</div>
-
-		<h3>公司信息</h3>
-
-		<div class="controls">
-		  <%= f.text_field :company_name_zh, :placeholder => '名称（中文)', :class => 'block box' %>
-		</div>
-		<div class="controls">
-		  <%= f.text_field :company_name_en, :placeholder => '名称( 英文 )', :class => 'block box' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :company_add, :placeholder => '电话' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :company_phone, :placeholder => '邮箱' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :company_website, :placeholder => '邮箱' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :company_wines_count, :placeholder => '邮箱' %>
-		</div>		
-
-		<h3>财务信息</h3>
-
-		<div class="controls">
-		  <%= f.text_field :finance_title, :placeholder => '名称（中文)', :class => 'block box' %>
-		</div>
-		<div class="controls">
-		  <%= f.text_field :finance_tax_num, :placeholder => '名称( 英文 )', :class => 'block box' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :finance_add, :placeholder => '电话' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :finance_name, :placeholder => '邮箱' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :finance_phone, :placeholder => '邮箱' %>
-		</div>
-
+		<%= render 'wine100/profiles/form_finance', :f => f %>
 	
 		<button class="btn btn-large btn-primary" type="submit">完成注册信息 》</button>
 		<% end %>

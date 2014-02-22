@@ -18,7 +18,7 @@ class Wine100::User < ActiveRecord::Base
   acts_as_indexed :fields => [:name, :password_digest, :email, 
     :password_cleartext, :current_sign_in_ip, :last_sign_in_ip]
 
-      # validates :name, :presence => true, :uniqueness => true
+      validates :email, :presence => true, :uniqueness => true
 
       validates :password, :presence => true, :on => :create
 

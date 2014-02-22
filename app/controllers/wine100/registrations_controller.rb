@@ -13,7 +13,7 @@ module Wine100
 			@user = Wine100::User.new(params[:wine100_user])
 
 			if @user.valid? && @user.save
-				flash[:notice] = '注册成功'
+				flash[:notice] = '注册成功, 请登录'
 				redirect_to wine100_accounts_path
 			else
 				render :new

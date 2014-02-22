@@ -2,24 +2,24 @@
 		<h3>公司信息</h3>
 
 		<div class="controls">
-		  <%= f.text_field :company_name_zh, :placeholder => '名称（中文)', :class => 'block box' %>
+		  <%= f.text_field :company_name_zh, :placeholder => '名称（中文)', :class => 'block box span6', :required => true %>
 		</div>
 		<div class="controls">
-		  <%= f.text_field :company_name_en, :placeholder => '名称( 英文 )', :class => 'block box' %>
-		</div>
-
-		<div class="controls">
-		  <%= f.text_field :company_add, :placeholder => '公司地址' %>
+		  <%= f.text_field :company_name_en, :placeholder => '名称( 英文 )', :class => 'block box span6', :required => true %>
 		</div>
 
 		<div class="controls">
-		  <%= f.text_field :company_phone, :placeholder => '公司电话' %>
+		  <%= f.text_field :company_add, :placeholder => '公司地址', :class => 'block box span6', :required => true %>
 		</div>
 
 		<div class="controls">
-		  <%= f.text_field :company_website, :placeholder => '公司网站' %>
+		  <%= f.text_field :company_phone, :placeholder => '公司电话', :class => 'block box span6', :required => true %>
 		</div>
 
 		<div class="controls">
-		  <%= f.text_field :company_wines_count, :placeholder => '可销售葡萄酒款数' %>
+		  <%= f.text_field :company_website, :placeholder => '公司网站', :class => 'block box span6', :required => true %>
+		</div>
+
+		<div class="controls">
+		  <%= f.text_field :company_wines_count, :placeholder => '可销售葡萄酒款数', :class => 'block box span6' %>
 		</div>		

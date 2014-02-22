@@ -8,11 +8,11 @@ module Wine100
 		end
 
 		def create
-			if params[:wine100_user][:name].blank? && params[:wine100_user][:password].blank?
+			if params[:wine100_user][:email].blank? && params[:wine100_user][:password].blank?
 				redirect_to root_path
 				return
 			end
-			@user = User.find_by_name(params[:wine100_user][:name])
+			@user = ::Wine100::User.find_by_email(params[:wine100_user][:email])
 			if @user && @user.authenticate(params[:wine100_user][:password])
 				session[:wine100_user_id] = @user.id
 				if @user.is_completed

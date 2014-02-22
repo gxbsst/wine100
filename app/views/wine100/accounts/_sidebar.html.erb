@@ -5,15 +5,15 @@
      <li class="nav-header">联系信息</li>
      <% if !@profile.new_record? %>
      <li>
-      <%= link_to "联系人信息", wine100_profile_path(@profile, :for => :contact) %>
+      <%= link_to "联系人信息", edit_wine100_profile_path(@profile, :for => :contact) %>
     </li>
-     <li> 
-      <%= link_to "公司信息", wine100_profile_path(@profile, :for => :company) %>
+     <!-- <li> 
+      <%= link_to "公司信息", edit_wine100_profile_path(@profile, :for => :company) %>
     </li>
 
      <li>
-      <%= link_to "财务信息", wine100_profile_path(@profile, :for => :finance) %>
-     </li>
+      <%= link_to "财务信息", edit_wine100_profile_path(@profile, :for => :finance) %>
+     </li> -->
      <% end %>
      <li class="nav-header">操作</li>
        <li>

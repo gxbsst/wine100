@@ -29,7 +29,10 @@
 				<% end %>
 				<% else %>
 				<tr>
-					<td>暂时没有酒，请添加</td>
+					<td>
+						暂时没有酒
+						<%= link_to '去上传酒款', new_wine100_wine_path, :class => 'btn btn-large btn-primary' %>
+					</td>
 					<td></td>
 					<td></td>
 					<td></td>

@@ -28,7 +28,13 @@ module Wine100
 		end
 
 		def update
-			
+			if @profile.update_attributes(params[:wine100_profile])
+				flash[:notice] = '更新成功'
+				redirect_to edit_wine100_profile_path(@profile)
+			else
+				flash[:error] = '更新失败'
+				render :edit
+			end
 		end
 
 		private

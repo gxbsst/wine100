@@ -3,36 +3,19 @@
   <div class="span6">
     <h3>登录</h3>
     <%= form_for @user, :url => wine100_sessions_path, :class => 'form-signin' do |f| %>
-    <div class="controls">
-      <%= f.text_field :email, :placeholder => '邮箱', :class => 'block box span6', :required => true %>
-    </div>
-    <div class="controls">
-      <%= f.password_field :password, :placeholder => '密码', :class => 'block box span6',  :required => true %>
-    </div>
-    <button class="btn btn-large btn-primary" type="submit">登录</button>
-    
+    <%= render 'form', :f => f %>
     <% end -%>
   </div>
 
   <div class="span6">
     <h3>注册</h3>
+
+
+   
+
     <%= form_for @user, :url => wine100_registrations_path, :class => 'form-signin' do |f| %>
-    <div class="controls">
-      <%= f.text_field :email, :placeholder => '邮箱', :class => 'block box span6',  :required => true %>
-    </div>
-    <div class="controls">
-      <%= f.text_field :phone, :placeholder => '手机号码', :class => 'block box span6',  :required => true %>
-    </div>
-
-    <div class="controls">
-      <%= f.password_field :password_cleartext, :placeholder => '密码', :class => 'block box span6',  :required => true %>
-    </div>
-
-    <div class="controls">
-      <%= f.password_field :password_confirmation, :placeholder => '确认密码', :class => 'block box span6',  :required => true %>
-    </div>
-
-    <button class="btn btn-large btn-primary" type="submit">登录</button>
+    <%= render 'wine100/registrations/form', :f => f %>
+   
     <% end %>
   </div>
 </div>

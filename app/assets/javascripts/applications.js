@@ -8,7 +8,10 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery.f5
+//= require validate
 // require_tree .
+
 
 function remove_fields(link) {
   $(link).parent().find("input[type=hidden]").attr('value',"1");  

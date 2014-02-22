@@ -14,7 +14,8 @@ module Wine100
 
 			if @user.valid? && @user.save
 				flash[:notice] = '注册成功, 请登录'
-				redirect_to wine100_accounts_path
+				session[:wine100_user_id] = @user.id
+				redirect_to complete_wine100_accounts_path
 			else
 				render :new
 			end

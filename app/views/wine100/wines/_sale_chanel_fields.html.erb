@@ -1,5 +1,5 @@
 <p class="fields">
-	<%= f.text_field :price, :placeholder => '价格' %>
-  <%= f.text_field :chanel, :placeholder => '销售渠道' %>
+	<%= f.text_field :price, :placeholder => '价格', :class => 'span1',:required => true %>  <span class="add-on"><i class="icon">元</i></span>
+  <%= f.text_field :chanel, :placeholder => '销售渠道',  :required => true %>
   <%= link_to_remove_fields "删除", f %>
 </p>

@@ -10,6 +10,7 @@
 //= require twitter/bootstrap
 //= require jquery.f5
 //= require validate
+//= require bootstrap.lightbox
 // require_tree .
 
 

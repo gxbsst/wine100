@@ -20,14 +20,29 @@ class Wine100::Profile < ActiveRecord::Base
       :finance_tax_num,
       :finance_add,
       :finance_name,
-      :finance_title,
       :finance_phone,
 
       :wine100_user_id
 
       validates :contact_name, :contact_phone, :contact_email, :presence => true, :on => :create
 
-      after_create do 
-        self.user.update_attribute(:is_completed, true)
+      # after_create do 
+      #   self.user.update_attribute(:is_completed, true)
+      # end
+
+      def completed?
+         contact_completed? && company_completed? && finance_completed?
+      end
+
+      def contact_completed?
+         contact_name? && contact_email? && contact_phone? 
+      end
+
+      def company_completed?
+        company_name_en? && company_name_zh && company_add? && company_phone? && company_website? && company_wines_count?
+      end
+
+      def  finance_completed? 
+        finance_title? && finance_tax_num? && finance_add? && finance_name? && finance_phone? 
       end
 end

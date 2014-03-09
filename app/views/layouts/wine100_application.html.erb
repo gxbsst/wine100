@@ -50,7 +50,7 @@
       <div class="nav-collapse collapse">
         <p class="navbar-text pull-right">
           <% if current_user %>
-              Logged in as <a href="#" class="navbar-link"><%= current_user.name %></a>
+              Logged in as <a href="#" class="navbar-link"><%= current_user.email %></a>
               <%= link_to 'Logout', wine100_session_path(current_user), :method => :delete %>
           <% else %>
           <%= link_to "Log in", new_wine100_session_path %>

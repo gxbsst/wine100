@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @user = User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id].present?
+    @user ||= User.find(session[:user_id])
+    else
+      nil
+    end
   end
 
   def authenticate_user

@@ -2,7 +2,7 @@
 module Wine100
 	class ProfilesController < ::Wine100::ApplicationController
 
-		before_filter :authenticate_user
+		before_filter :authenticate_wine100_user
 		before_filter :get_profile
 
 		def show
@@ -10,7 +10,6 @@ module Wine100
 		end
 		
 		def new
-		 redirect_to edit_wine100_profile_path(current_user.profile) if current_user.profile 
 		 @profile =  current_user.build_profile 
 		end
 
@@ -37,10 +36,10 @@ module Wine100
 			end
 		end
 
-		private
+	 protected	
 
 		def get_profile
-			@profile = current_user.profile 
+			@profile = current_user.profile  || current_user.build_profile
 		end
 	end
 end

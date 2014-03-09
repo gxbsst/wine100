@@ -18,18 +18,21 @@ class Wine100::User < ActiveRecord::Base
   acts_as_indexed :fields => [:name, :password_digest, :email, 
     :password_cleartext, :current_sign_in_ip, :last_sign_in_ip]
 
-      validates :email, :presence => true, :uniqueness => true
+  validates :email, :presence => true, :uniqueness => true
 
-      validates :password, :presence => true, :on => :create
+  validates :password, :presence => true, :on => :create
 
-      before_validation :set_password
+  before_validation :set_password
 
-      validates :password, :confirmation => true
+  validates :password, :confirmation => true
 
-      # overwrite password
-      def set_password
-        self.password = self.password_cleartext
-        self.password_confirmation = self.password_cleartext
-      end
+  # overwrite password
+  def set_password
+    self.password = self.password_cleartext
+    # self.password_confirmation = self.password_cleartext
+  end
 
-    end
+  def profile_completed?
+     profile.present? && profile.completed?
+  end
+end

@@ -12,6 +12,7 @@ Wine100::Application.routes.draw do
     end
     resources :home
     resources :profiles
+    resources :passwords
   end
 
   get "challenges/create"

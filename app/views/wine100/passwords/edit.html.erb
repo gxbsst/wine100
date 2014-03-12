@@ -1,0 +1,14 @@
+<div class="row-fluid">
+	<%= render 'wine100/accounts/sidebar' %>
+	<div class="span9">
+		<h2>修改密码</h2>
+
+		<%= form_for @user, :url => wine100_password_path(@user), :class => 'form-signin' do |f| %>
+
+		<%= render 'form', :f => f %>
+	
+		<button class="btn btn-large btn-primary" type="submit">更新密码</button>
+		<% end %>
+
+	</div><!--/span-->
+</div>

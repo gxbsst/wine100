@@ -8,17 +8,20 @@
 <div class="control-group">
 
 	<div class="controls">
-		<%= f.text_field :contact_job, :placeholder => '职位', :class => 'block box span6', :required => true %>
+		<%= f.text_field :contact_job, :placeholder => '职位', :class => 'span6', :required => true %>
+		<span class="red">*</span>
 	</div>
 </div>
 
 <div class="control-group">
 	<div class="controls">
-		<%= f.text_field :contact_phone, :placeholder => '电话', :class => 'block box span6', :required => true %>
+		<%= f.text_field :contact_phone, :placeholder => '电话', :class => 'span6', :required => true %>
+		<span class="red">*</span>
 	</div>
 </div>
 <div class="control-group">
 	<div class="controls">
-		<%= f.email_field :contact_email, :placeholder => '邮箱', :class => 'block box span6', :required => true %>
+		<%= f.email_field :contact_email, :placeholder => '邮箱', :class => 'span6', :required => true %>
+		<span class="red">*</span>
 	</div>
 </div>

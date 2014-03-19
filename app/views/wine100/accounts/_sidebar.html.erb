@@ -2,28 +2,27 @@
 <div class="span3">
   <div class="well sidebar-nav">
     <ul class="nav nav-list">
-     <li class="nav-header">联系信息</li>
+     <li class="nav-header">设置</li>
      <% if !@profile.new_record? %>
      <li>
-      <%= link_to "联系人信息", edit_wine100_profile_path(@profile, :for => :contact) %>
+      <%= link_to "联系信息", edit_wine100_profile_path(@profile, :for => :contact) %>
     </li>
-     <!-- <li> 
       <%= link_to "公司信息", edit_wine100_profile_path(@profile, :for => :company) %>
     </li>
 
      <li>
       <%= link_to "财务信息", edit_wine100_profile_path(@profile, :for => :finance) %>
-     </li> -->
+     </li>
+     <li><%= link_to  '修改密码', edit_wine100_password_path(@user) %></li>
      <% end %>
      <li class="nav-header">操作</li>
        <li>
-        <%= link_to "酒列表", wine100_wines_path() %>
+        <%= link_to "参赛酒列表", wine100_wines_path() %>
        </li>
       <li>
-        <%= link_to "添加酒", new_wine100_wine_path() %>
+        <%= link_to "上传参赛酒", new_wine100_wine_path() %>
       </li>
-      <li class="nav-header">设置</li>
-      <li><%= link_to  '修改密码', edit_wine100_password_path(@user) %></li>
+     
    </ul>
  </div><!--/.well -->
 </div><!--/span-->

@@ -1,11 +1,21 @@
 <div class="row-fluid">
+
 	<%= render '/wine100/accounts/sidebar' %>
 	<script type="text/javascript">
 	$('.lightbox').lightbox();
 	</script>
 	<div class="span9">
-		<h3>酒列表</h3>
+
+		<div class="alert">
+		  <button type="button" class="close" data-dismiss="alert">&times;</button>
+		  <strong>注意! </strong> 修改点击编辑，取消参赛点击删除.
+		</div>
+
+		<div class="page-header">
+			<h2>参赛酒列表</h2>
+		</div>
 		
+		<% if !@wines.blank? %>
 		<table class="table table-condensed">
 			<thead>
 				<tr>
@@ -16,7 +26,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% if !@wines.blank? %>
+				
 				<% @wines.each do |wine| %>
 				<tr>
 					<td  class="thumbnails" data-toggle="lightbox">
@@ -36,19 +46,12 @@
 						</td>
 				</tr>
 				<% end %>
-				<% else %>
-				<tr>
-					<td>
-						暂时没有酒
-						<%= link_to '去上传酒款', new_wine100_wine_path, :class => 'btn btn-large btn-primary' %>
-					</td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<% end %>
+				
 			
 			</tbody>
 		</table>
+		<% else %>
+		<p align="center"><%= link_to '上传参赛酒', new_wine100_wine_path, :class => 'btn btn-large btn-primary' %></p>
+		<% end %>
 	</div><!--/span-->
 </div>

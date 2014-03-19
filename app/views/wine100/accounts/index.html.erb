@@ -1,8 +1,14 @@
 <div class="row-fluid">
-	<%= render 'sidebar' %>
+	<%= render '/wine100/accounts/sidebar' %>
+	<script type="text/javascript">
+	$('.lightbox').lightbox();
+	</script>
 	<div class="span9">
-		<h3>酒列表</h3>
+		<div class="page-header">
+			<h2>参赛酒列表</h2>
+		</div>
 		
+		<% if !@wines.blank? %>
 		<table class="table table-condensed">
 			<thead>
 				<tr>
@@ -13,10 +19,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% if !@wines.blank? %>
+				
 				<% @wines.each do |wine| %>
 				<tr>
-					<td><%= image_tag wine.photo_url(:thumb), :size => '100x100' %></td>
+					<td  class="thumbnails" data-toggle="lightbox">
+						<a data-toggle="lightbox" href="<%=  wine.photo_url()  %>" class="thumbnail">
+							
+							<%= image_tag wine.photo_url(:thumb), :size => '100x100' %>
+						</a>
+
+					</td>
 					<td><%= wine.name %></td>
 					<td><%= raw wine.spec %></td>
 					<td>
@@ -24,19 +36,15 @@
 						&nbsp;
 						&nbsp;
 						<%= link_to '删除', wine100_wine_path(wine), :method => :delete %>
-					</td>
+						</td>
 				</tr>
 				<% end %>
-				<% else %>
-				<tr>
-					<td>暂时没有酒		<%= link_to '去上传酒款', new_wine100_wine_path, :class => 'btn btn-large btn-primary' %></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<% end %>
-
+				
+			
 			</tbody>
 		</table>
+		<% else %>
+		<p align="center"><%= link_to '上传参赛酒', new_wine100_wine_path, :class => 'btn btn-large btn-primary' %></p>
+		<% end %>
 	</div><!--/span-->
 </div>

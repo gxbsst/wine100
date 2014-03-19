@@ -29,3 +29,27 @@
    padding: 2px 8px;
    margin-top: 2px;
  }
+
+#sweetness-outer {
+	display: none;
+}
+ 
+ table.wine-form-6, table.wine-form, table.wine-form-2, table.wine-form-3, table.wine-form-4, table.wine-form-5, table.wine-form-7
+  {
+  	margin: 0;
+  	margin-bottom: 0;
+
+ 	.td_1 {
+ 		width: 80px;
+ 	}
+ }
+
+.wine-form-3 {
+	.td_1 {
+
+	}
+	.td_3{
+		width: 40px;
+	}
+}
+

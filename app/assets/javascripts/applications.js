@@ -15,17 +15,29 @@
 
 
 function remove_fields(link) {
-  $(link).parent().find("input[type=hidden]").attr('value',"1");  
-  $(link).parent().hide();
+	$(link).parent().find("input[type=hidden]").attr('value',"1");  
+	$(link).parent().hide();
 }
 function add_fields(link, association, content, outer_class) {
 
-  var new_id = new Date().getTime();
-  var regexp = new RegExp("new_" + association, "g")
+	var new_id = new Date().getTime();
+	var regexp = new RegExp("new_" + association, "g")
   // $(link).up().insert({
   //   before: content.replace(regexp, new_id)
   // });
-	var new_content = content.replace(regexp, new_id)
-	$(outer_class).append(new_content);
+var new_content = content.replace(regexp, new_id)
+$(outer_class).append(new_content);
 
 }
+
+$(document).ready(function(){ 
+
+	$('#wine100_wine_style').on('change', function() {
+	  if(this.value == '甜葡萄酒' ) {
+	  	$("#sweetness-outer").show();
+	  }else{
+	  	$("#sweetness-outer").hide();
+	  }
+	});
+
+});

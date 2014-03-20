@@ -10,7 +10,7 @@ module Wine100
 		end
 		
 		def new
-		 @profile =  current_user.build_profile 
+		 @profile = current_user.build_profile 
 		end
 
 		def create

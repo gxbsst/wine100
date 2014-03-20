@@ -66,13 +66,13 @@ module Wine100
       if current_user && current_user.profile.present?
         if  !current_user.profile_completed?
           flash[:error] = '请完成用户信息'
-          redirect_to edit_wine100_profile_path(current_user.profile)  
+          redirect_to edit_wine100_profile_path(current_user.profile, :for => 'contact')  
         else
           true
         end
       else
         flash[:error] = '请完成用户信息'
-        redirect_to new_wine100_profile_path
+        redirect_to new_wine100_profile_path(:for => 'contact')
       end
     end
 

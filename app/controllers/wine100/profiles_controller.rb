@@ -16,7 +16,7 @@ module Wine100
 		def create
 		  @profile = current_user.profile(params) || current_user.build_profile(params[:wine100_profile])
 		  if @profile.valid? && @profile.save
-		  	redirect_to wine100_accounts_path
+		  	redirect_to edit_wine100_profile_path(@profile, :for => 'company')
 		  else
 		  	render :new
 		  end
@@ -29,7 +29,17 @@ module Wine100
 		def update
 			if @profile.update_attributes(params[:wine100_profile])
 				flash[:notice] = '更新成功'
-				redirect_to edit_wine100_profile_path(@profile)
+				case params[:for]
+				when 'contact'
+					step = 'company'
+				when 'company'
+					step = 'finance'
+				else
+				redirect_to new_wine100_wine_path
+				return 
+				end
+				redirect_to edit_wine100_profile_path(@profile, :for => step)
+				
 			else
 				flash[:error] = '更新失败'
 				render :edit

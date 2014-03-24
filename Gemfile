@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 #source 'http://ruby.taobao.org'
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,7 +9,7 @@ gem 'passenger'
 
 group :development, :test do
   gem "better_errors", '0.2.0'
-  gem "binding_of_caller", '0.6.8'
+  gem "binding_of_caller"
   gem 'pry'  # "binding.pry" in action
   gem 'sextant'
 end
@@ -38,7 +38,7 @@ gem 'jquery-rails', '~> 2.0.0'
 gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
@@ -63,11 +63,11 @@ gem 'refinerycms-i18n', '~> 2.0.0'
 #  gem 'refinerycms-search', '~> 2.0.0'
 #  gem 'refinerycms-page-images', '~> 2.0.0'
 
-gem 'refinerycms-members', :path => 'vendor/extensions'
-gem 'refinerycms-wines', :path => 'vendor/extensions'
-gem 'refinerycms-wine_groups', :path => 'vendor/extensions'
-gem 'refinerycms-user_groups', :path => 'vendor/extensions'
-gem 'refinerycms-test_papers', :path => 'vendor/extensions'
+# gem 'refinerycms-members', :path => 'vendor/extensions'
+# gem 'refinerycms-wines', :path => 'vendor/extensions'
+# gem 'refinerycms-wine_groups', :path => 'vendor/extensions'
+# gem 'refinerycms-user_groups', :path => 'vendor/extensions'
+# gem 'refinerycms-test_papers', :path => 'vendor/extensions'
 
 # export exel
 gem 'axlsx'
@@ -77,3 +77,5 @@ gem 'axlsx_rails'
 gem 'memcache-client'
 
 gem 'mini_magick'
+
+gem 'refinerycms-wine100_wines', :path => 'vendor/extensions'

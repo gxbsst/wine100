@@ -1,0 +1,42 @@
+nl:
+  refinery:
+    plugins:
+      wine100_wines:
+        title: Wine100 Wines
+    wine100_wines:
+      admin:
+        wine100_wines:
+          actions:
+            create_new: Maak een nieuwe Wine100 Wine
+            reorder: Wijzig de volgorde van de Wine100 Wines
+            reorder_done: Klaar met het wijzingen van de volgorde van de Wine100 Wines
+          records:
+            title: Wine100 Wines
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Wine100 Wines. Druk op 'Maak een nieuwe Wine100 Wine' om de eerste aan te maken.
+          wine100_wine:
+            view_live_html: Bekijk deze wine100 wine op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze wine100 wine
+            delete: Verwijder deze wine100 wine voor eeuwig
+      wine100_wines:
+        show:
+          other: Andere Wine100 Wines
+  activerecord:
+    attributes:
+      'refinery/wine100_wines/wine100_wine':
+        photo_id: Photo
+        style: Style
+        name_zh: Name Zh
+        name_en: Name En
+        region_1: Region 1
+        region_2: Region 2
+        region_3: Region 3
+        vintage: Vintage
+        alcoholicity: Alcoholicity
+        market_price: Market Price
+        winery_zh: Winery Zh
+        winery_en: Winery En
+        level: Level
+        sweetness: Sweetness
+        is_oak: Is Oak
+        prize_history: Prize History

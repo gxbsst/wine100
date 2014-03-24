@@ -1,0 +1,42 @@
+en:
+  refinery:
+    plugins:
+      wine100_wines:
+        title: Wine100 Wines
+    wine100_wines:
+      admin:
+        wine100_wines:
+          actions:
+            create_new: Add New Wine100 Wine
+            reorder: Reorder Wine100 Wines
+            reorder_done: Done Reordering Wine100 Wines
+          records:
+            title: Wine100 Wines
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Wine100 Wines yet. Click "Add New Wine100 Wine" to add your first wine100 wine.
+          wine100_wine:
+            view_live_html: View this wine100 wine live <br/><em>(opens in a new window)</em>
+            edit: Edit this wine100 wine
+            delete: Remove this wine100 wine forever
+      wine100_wines:
+        show:
+          other: Other Wine100 Wines
+  activerecord:
+    attributes:
+      'refinery/wine100_wines/wine100_wine':
+        photo_id: Photo
+        style: Style
+        name_zh: Name Zh
+        name_en: Name En
+        region_1: Region 1
+        region_2: Region 2
+        region_3: Region 3
+        vintage: Vintage
+        alcoholicity: Alcoholicity
+        market_price: Market Price
+        winery_zh: Winery Zh
+        winery_en: Winery En
+        level: Level
+        sweetness: Sweetness
+        is_oak: Is Oak
+        prize_history: Prize History

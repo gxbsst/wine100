@@ -1,0 +1,228 @@
+<script type="text/javascript" charset="utf-8">
+
+$(document).ready(function(){ 
+
+	$('#wine100_wine_style').on('change', function() {
+	  if(this.value == '甜葡萄酒' ) {
+	  	$("#sweetness-outer").show();
+	  }else{
+	  	$("#sweetness-outer").hide();
+	  }
+	});
+
+});
+
+function remove_fields(link) {
+	$(link).parent().find("input[type=hidden]").attr('value',"1");  
+	$(link).parent().hide();
+}
+function add_fields(link, association, content, outer_class) {
+
+	var new_id = new Date().getTime();
+	var regexp = new RegExp("new_" + association, "g")
+  // $(link).up().insert({
+  //   before: content.replace(regexp, new_id)
+  // });
+var new_content = content.replace(regexp, new_id)
+$(outer_class).append(new_content);
+
+}
+
+</script>
+
+<%= form_for [refinery, :wine100_wines_admin, @wine100_wine] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @wine100_wine,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+
+	<% if !@wine100_wine.photo_url.present? %>
+	<img id="uploadPreview" data-src="holder.js/140x140" align="left" class="img-rounded" alt="酒标" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAFD0lEQVR4Xu3Y2ytsYRyH8d84n8rxxjkuCEVJDhF/Oy6Qcs6FiBtyapBjTrP7vTUTew/b155Xe6ZnrrZ891r1rE9r1pJIJpMp40OBLxZIAOaLpZiFAoABglQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxnkN5unpyTY2Nqy4uNgGBgastLQ06xVNJpP28PBgLS0t4fdXV1e2trZm/v8bGxttaGjIioqKPtXwk+f6n1nmNZj7+3s7ODiww8NDm5yctMrKyj9av7y82Pz8vPX29lpzc7M9Pj6Gn/3fbW1ttr6+buXl5TY6OvrpdfrJcwEmYgEHMTs7axMTE1nBbG5u2snJSbgDOZL9/X07Pj4Oe/+kAY2Njdnt7a1VVFRYbW1t+N3p6amVlZVZXV1d+DmX56qpqYlYJd6h8/oO41men59tbm4uKxiH4mD84nR0dISvpO3t7QCrq6srU3VhYSH8/vX11XZ2dmx6etru7u5seXnZRkZGMmByea7W1tZ4VzXikQsWTPrO0d/fbzc3N1ZVVWV+kZaWlgIOv9ukP47I7yr++5WVFfOvH///nZ2d1t3dndl9BOa754p4XaMdumDBLC4uhq+T4eHhcFdJg/A7TlNT0zswW1tbVl9fH8D4147fsfyraXx83BKJxF/BfPdc0a5qxAMXJJjd3d3wMPz7x59jLi4uwluVPwT7J5VKBSA9PT0B0dnZWXgQ9o8/51RXV38K5l/OFfG6Rjt0QYLxryB/HvGPvy7v7e2FO4Z/vTgYv6PMzMwEOP7Kvbq6Gn72j+Pp6+sLr97+0Ds1NZV55c72lfTdc5WUlES7qDEPnPdg/PnBL/JHr9Uez4H4V1J7e3u4o/hzjL8R+d9gzs/Pw93Gf+cPv/63HH/Q9Z2/fTU0NNjg4GC4Brk8V8yLGvPYeQ/G41xfX4c3obfPG2+j+UOs3038mSb9OTo6CgD82SX9Gn15eRn+nT6O/7HOYaVfq3N5rpgXNeaxCwJMzEAc+30BwCBCKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKvAL5pjypnvj9I4AAAAASUVORK5CYII=">
+
+<% else %>
+ <%= image_tag @wine100_wine.photo_url(:thumb), :size => '140x140', :align=>"left", :id => 'uploadPreview' %>
+<% end %>
+  <script type="text/javascript">
+var oFReader = new FileReader();
+oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
+
+oFReader.onload = function (oFREvent) {
+    document.getElementById("uploadPreview").src = oFREvent.target.result;
+};
+
+function PreviewImage() {
+  var oFReader = new FileReader();
+  oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
+
+  oFReader.onload = function (oFREvent) {
+    document.getElementById("uploadPreview").src = oFREvent.target.result;
+  };
+};
+
+  </script>
+
+	<%= f.file_field :photo, :onchange => 'PreviewImage()' %>
+  </div>
+  <div class="clear" style="clear:both;"></div>
+  <div class='field'>
+    <%= f.label "类型"-%>
+    <%= f.select :style, APP['wines']['styles'].each{|value| [value, value]}, :required => true, :prompt => '葡萄酒类型' %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label "中文名"-%>
+    <%= f.text_field :name_zh  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "英文名"-%>
+    <%= f.text_field :name_en  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "原产国"-%>
+    <%= f.text_field :region_1  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "产区"-%>
+    <%= f.text_field :region_2  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "子产区"-%>
+    <%= f.text_field :region_3  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "年份"-%>
+    <%= f.text_field :vintage  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "酒精度"-%>
+    <%= f.text_field :alcoholicity  -%>
+
+  </div>
+   
+  <div class='field'>
+    <%= f.label "酒庄(中文)"-%>
+    <%= f.text_field :winery_zh  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "酒庄(英文)"-%>
+    <%= f.text_field :winery_en  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "等级"-%>
+    <%= f.text_field :level  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "甜度"-%>
+    <%= f.text_field :sweetness  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label "橡木桶陈酿"-%>
+    <%= f.check_box :is_oak, :checked => @wine100_wine[:is_oak]  -%>
+
+  </div>
+
+<table class="table wine-form-5">
+  <tr class="tr_1">
+    <td class="td_1" valign="top">
+      <%= f.label :varieties, "葡萄品种: " %>
+    </td>
+    <td class="td_2">
+      <div class="control-group">
+
+        <div class="controls" >
+         <div class="variety_outer" >
+          <%= f.fields_for :varieties do |v| %>
+          <%= render "variety_fields", :f => v %>
+          <% end %>
+        </div>
+        <p><%= link_to_add_fields "添加葡萄品种", f, :varieties, '.variety_outer' %></p>
+        <br>
+      </div>
+      </div>
+
+    </td>
+  </tr>
+</table>
+
+
+<table class="table wine-form-6">
+  <tr class="tr_1">
+    <td class="td_1" valign="top">
+      <%= f.label :sale_chanels, "建议零售价: " %>
+    </td>
+    <td class="td_2">
+     <!-- 
+     <div class="controls">
+      <%= f.text_field :market_price, :placeholder => '零售价', :class => 'block box' %>
+     </div> -->
+
+     <div class="control-group">
+     <div class="controls" >
+      <div class="sale_chanel_outer" >
+        <%= f.fields_for :sale_chanels do |v| %>
+        <%= render "sale_chanel_fields", :f => v %>
+        <% end %>
+      </div>
+      <p><%= link_to_add_fields "建议零售价", f, :sale_chanels, '.sale_chanel_outer' %></p>
+     </div>
+     </div>
+    </td>
+  </tr>
+</table>
+
+
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:prize_history].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/wine100_wines/wine100_wine", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:prize_history].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.wine100_wines.admin.wine100_wines.wine100_wine'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @wine100_wine.style) %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

@@ -1,0 +1,44 @@
+zh-CN:
+  refinery:
+    plugins:
+      wine100_wines:
+        title: Wine100 Wines
+    wine100_wines:
+      admin:
+        wine100_wines:
+          actions:
+            create_new: 建立新的 Wine100 Wine
+            reorder: 对 Wine100 Wines 重新排序
+            reorder_done: 对 Wine100 Wines 的重新排序结束
+          records:
+            title: Wine100 Wines
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Wine100 Wines yet. Click "Add New Wine100 Wine" to add your first wine100 wine.
+            no_items_yet: 目前没有 Wine100 Wines . 点击 "Add New Wine100 Wine" 创建一个wine100 wine.
+          wine100_wine:
+            view_live_html: 查看 wine100 wine 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 wine100 wine
+            delete: 永久删除 wine100 wine
+      wine100_wines:
+        show:
+          other: 其他 Wine100 Wines
+  activerecord:
+    attributes:
+      'refinery/wine100_wines/wine100_wine':
+        photo_id: Photo
+        style: Style
+        name_zh: Name Zh
+        name_en: Name En
+        region_1: Region 1
+        region_2: Region 2
+        region_3: Region 3
+        vintage: Vintage
+        alcoholicity: Alcoholicity
+        market_price: Market Price
+        winery_zh: Winery Zh
+        winery_en: Winery En
+        level: Level
+        sweetness: Sweetness
+        is_oak: Is Oak
+        prize_history: Prize History

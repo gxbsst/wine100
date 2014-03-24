@@ -1,0 +1,42 @@
+sk:
+  refinery:
+    plugins:
+      wine100_wines:
+        title: Wine100 Wines
+    wine100_wines:
+      admin:
+        wine100_wines:
+          actions:
+            create_new: Pridať Wine100 Wine
+            reorder: Preusporiadať Wine100 Wines
+            reorder_done: Koniec radenia Wine100 Wines
+          records:
+            title: Wine100 Wines
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Wine100 Wines. Kliknite na "Pridať Wine100 Wine" pre pridanie prvého wine100 wine.
+          wine100_wine:
+            view_live_html: Zobraziť náhľad wine100 wine<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť wine100 wine
+            delete: Zmazať wine100 wine
+      wine100_wines:
+        show:
+          other: Daľšie Wine100 Wines
+  activerecord:
+    attributes:
+      'refinery/wine100_wines/wine100_wine':
+        photo_id: Photo
+        style: Style
+        name_zh: Name Zh
+        name_en: Name En
+        region_1: Region 1
+        region_2: Region 2
+        region_3: Region 3
+        vintage: Vintage
+        alcoholicity: Alcoholicity
+        market_price: Market Price
+        winery_zh: Winery Zh
+        winery_en: Winery En
+        level: Level
+        sweetness: Sweetness
+        is_oak: Is Oak
+        prize_history: Prize History

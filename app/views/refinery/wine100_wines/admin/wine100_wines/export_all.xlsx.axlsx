@@ -1,0 +1,36 @@
+# encoding: utf-8
+# https://github.com/randym/axlsx/blob/master/examples/example.rb
+xlsx_package = Axlsx::Package.new
+xlsx_package.use_shared_strings = true
+wb = xlsx_package.workbook
+wb.add_worksheet(name: 'all_wines') do |sheet|
+  sheet.add_row @titles
+  blue = sheet.styles.add_style :color => "#00FF00"
+  title = sheet.styles.add_style(
+      :fg_color=>"#CCCCCCCC",
+      :sz=>12,
+      :alignment=>{:horizontal => :left, :wrap_text => true, :vertical => :center },
+      :border=> {:style => :thin, :color => "CCCCCCCC"})
+  @wines.each do |r|
+    is_oak = r.is_oak? ? '橡木桶陈酿' : '不是橡木桶陈酿'
+    varieties = r.varieties.map {|i| ["#{i.name_en} - #{i.percentage}"] }
+    varieties.compact!
+    v = if varieties.present?
+          varieties.join("\n")
+        else
+          ""
+        end
+
+    sales = r.sale_chanels.map {|i| ["#{i.chanel} - #{i.price}"] }
+    sales.compact!
+    s = if sales.present?
+           sales.join("\n")
+        else
+          ""
+        end
+
+    row_data = [r.name, r.region , r.style , r.vintage, r.alcoholicity, r.winery_name, r.level, r.sweetness, is_oak, r.prize_history, v,  s]
+    sheet.add_row row_data, :height => 30, :style =>  title
+    #Axlsx::STYLE_THIN_BORDER
+  end
+end

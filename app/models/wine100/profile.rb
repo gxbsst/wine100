@@ -40,7 +40,7 @@ class Wine100::Profile < ActiveRecord::Base
       end
 
       def company_completed?
-        company_name_en? && company_name_zh && company_add? && company_phone? && company_website? && company_wines_count?
+        company_name_zh && company_add? && company_phone? && company_website? && company_wines_count?
       end
 
       def  finance_completed? 

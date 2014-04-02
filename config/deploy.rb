@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require 'capistrano-unicorn'
 set :application, "wine100"
 set :scm, :git
 set :use_sudo, false
@@ -61,7 +62,15 @@ namespace :deploy do
   task :change_tmp do
     run("chmod -R 777 #{current_path}/tmp")
   end
-  #after "deploy:finalize_update", "deploy:change_tmp"
+
+  task :assets do 
+    run("cd #{deploy_to}/current && bundle exec rake assets:precompile RAILS_ENV=production")
+  end
+  after "deploy:finalize_update", "deploy:assets"
+
+  after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+  after 'deploy:restart', 'unicorn:restart'   # app preloaded
+  after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
 
 end
 

@@ -13,6 +13,7 @@ group :development, :test do
   gem "binding_of_caller"
   gem 'pry'  # "binding.pry" in action
   gem 'sextant'
+  gem 'capistrano-unicorn', :require => false
 end
 
 
@@ -24,7 +25,7 @@ gem 'client_side_validations'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets, :production do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 

@@ -17,10 +17,10 @@ module Wine100
         session[:wine100_user_id] = @user.id
         @profile = @user.profile
         if @profile.present?
-          if !@user.profile.contact_completed?
-            redirect_to edit_wine100_profile_path(@profile, :for => 'contact')
-          elsif !@user.profile.company_completed?
+          if !@user.profile.company_completed?
             redirect_to edit_wine100_profile_path(@profile, :for => 'company')
+          elsif !@user.profile.contact_completed?
+            redirect_to edit_wine100_profile_path(@profile, :for => 'contact')
           elsif !@user.profile.finance_completed?
             redirect_to edit_wine100_profile_path(@profile, :for => 'finance')
           else

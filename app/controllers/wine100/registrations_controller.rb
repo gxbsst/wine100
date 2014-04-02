@@ -15,7 +15,7 @@ module Wine100
 			if @user.valid? && @user.save
 				flash[:notice] = '注册成功, 请完成注册信息.'
 				session[:wine100_user_id] = @user.id
-				redirect_to new_wine100_profile_path(:for => 'contact')
+				redirect_to new_wine100_profile_path(:for => 'company')
 			else
 				render :new
 			end

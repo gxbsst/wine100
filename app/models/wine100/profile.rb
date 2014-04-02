@@ -24,7 +24,8 @@ class Wine100::Profile < ActiveRecord::Base
 
       :wine100_user_id
 
-      validates :contact_name, :contact_phone, :contact_email, :presence => true, :on => :create
+      #validates :contact_name, :contact_phone, :contact_email, :presence => true, :on => :create
+      validates :company_name_zh, :company_add, :company_phone, :presence => true, :on => :create
 
       # after_create do 
       #   self.user.update_attribute(:is_completed, true)

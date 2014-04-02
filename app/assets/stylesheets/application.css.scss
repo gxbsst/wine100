@@ -53,3 +53,16 @@
 	}
 }
 
+body .navbar-inverse, .navbar {
+
+  .navbar-inner { 
+    background-color: #ffc600;
+    background-image: none;
+  }
+
+  h1.brand {
+    background: url("/images/logo.jpg") no-repeat left top;
+    padding-left: 100px;
+  }
+
+}

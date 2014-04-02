@@ -14,15 +14,15 @@ set :default_environment, {
 if ENV['RAILS_ENV'] =='production'
   set :application, "Wine100"
   set :default_environment, {
-      'PATH' => "/home/deployer/.rbenv/versions/1.9.3-p392/bin/:$PATH"
+    'PATH' => "/home/deployer/.rbenv/versions/2.0.0-p451/bin/:$PATH"
   }
-  server "wine100", :web, :app, :db, primary: true
+  server "wine100-2-deployer", :web, :app, :db, primary: true
   set :repository,  "git://github.com/gxbsst/wine100.git"
   set :user, "deployer"
   set :deploy_to, "/home/#{user}/apps/#{application}"
 else
   set :default_environment, {
-      'PATH' => "/home/deployer/.rbenv/versions/1.9.3-p448/bin/:$PATH"
+    'PATH' => "/home/deployer/.rbenv/versions/2.0.0-p451/bin/:$PATH"
   }
   set :user, "deployer"
   server "cancer", :web, :app, :db, primary: true

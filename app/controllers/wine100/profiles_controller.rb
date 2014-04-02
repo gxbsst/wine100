@@ -30,9 +30,9 @@ module Wine100
 			if @profile.update_attributes(params[:wine100_profile])
 				flash[:notice] = '更新成功'
 				case params[:for]
-				when 'contact'
-					step = 'company'
 				when 'company'
+					step = 'contact'
+				when 'contact'
 					step = 'finance'
 				else
 				redirect_to new_wine100_wine_path

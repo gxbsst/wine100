@@ -1,51 +1,79 @@
 <style>
-label {
-display: inline;
-}
-div.controls {
- display: inline;
-}
+  label {
+    display: inline;
+  }
+  div.controls {
+   display: inline;
+ }
 </style>
 
-<h3>必填</h3>
+<table class="table wine-form-2" cellpadding="0" cellspacing="0">
+  <tr class="tr_1">
+    <td class="td_1">
+      <%= f.label :name_zh, "中文名: " %>
+    </td>
+    <td class="td_2">
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_field :name_zh, :placeholder => '中文名',  :class => 'span12', :required => true %>
+        </div>
+      </div>
+    </td>
+    <td class="td_3">
+      <%= f.label :name_en, "英文名: " %>
+    </td>
+    <td class="td_4">
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_field :name_en, :placeholder => '英文名', :class => 'span12', :required => true %>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
 
-<div class="controls">
-
-	<% if @wine.photo.blank? %>
-	<img id="uploadPreview" data-src="holder.js/140x140" align="left" class="img-rounded" alt="酒标" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAFD0lEQVR4Xu3Y2ytsYRyH8d84n8rxxjkuCEVJDhF/Oy6Qcs6FiBtyapBjTrP7vTUTew/b155Xe6ZnrrZ891r1rE9r1pJIJpMp40OBLxZIAOaLpZiFAoABglQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxnkN5unpyTY2Nqy4uNgGBgastLQ06xVNJpP28PBgLS0t4fdXV1e2trZm/v8bGxttaGjIioqKPtXwk+f6n1nmNZj7+3s7ODiww8NDm5yctMrKyj9av7y82Pz8vPX29lpzc7M9Pj6Gn/3fbW1ttr6+buXl5TY6OvrpdfrJcwEmYgEHMTs7axMTE1nBbG5u2snJSbgDOZL9/X07Pj4Oe/+kAY2Njdnt7a1VVFRYbW1t+N3p6amVlZVZXV1d+DmX56qpqYlYJd6h8/oO41men59tbm4uKxiH4mD84nR0dISvpO3t7QCrq6srU3VhYSH8/vX11XZ2dmx6etru7u5seXnZRkZGMmByea7W1tZ4VzXikQsWTPrO0d/fbzc3N1ZVVWV+kZaWlgIOv9ukP47I7yr++5WVFfOvH///nZ2d1t3dndl9BOa754p4XaMdumDBLC4uhq+T4eHhcFdJg/A7TlNT0zswW1tbVl9fH8D4147fsfyraXx83BKJxF/BfPdc0a5qxAMXJJjd3d3wMPz7x59jLi4uwluVPwT7J5VKBSA9PT0B0dnZWXgQ9o8/51RXV38K5l/OFfG6Rjt0QYLxryB/HvGPvy7v7e2FO4Z/vTgYv6PMzMwEOP7Kvbq6Gn72j+Pp6+sLr97+0Ds1NZV55c72lfTdc5WUlES7qDEPnPdg/PnBL/JHr9Uez4H4V1J7e3u4o/hzjL8R+d9gzs/Pw93Gf+cPv/63HH/Q9Z2/fTU0NNjg4GC4Brk8V8yLGvPYeQ/G41xfX4c3obfPG2+j+UOs3038mSb9OTo6CgD82SX9Gn15eRn+nT6O/7HOYaVfq3N5rpgXNeaxCwJMzEAc+30BwCBCKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKvAL5pjypnvj9I4AAAAASUVORK5CYII=">
-
-<% else %>
- <%= image_tag @wine.photo_url(:thumb), :size => '140x140', :align=>"left", :id => 'uploadPreview' %>
-<% end %>
-  <script type="text/javascript">
-var oFReader = new FileReader();
-oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
-
-oFReader.onload = function (oFREvent) {
-    document.getElementById("uploadPreview").src = oFREvent.target.result;
-};
-
-function PreviewImage() {
-  var oFReader = new FileReader();
-  oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
-
-  oFReader.onload = function (oFREvent) {
-    document.getElementById("uploadPreview").src = oFREvent.target.result;
-  };
-};
-
-  </script>
-
-  <%# <img id="uploadPreview" style="width: 100px; height: 100px;" /> %>
-	<%= f.file_field :photo, :onchange => 'PreviewImage()' %>
-
-
-	<br>
-	<span >最大可传5MB的PNG、JPG、GIF图片</span>
-
-</div>
-<div class="clear" style="clear: both;"></div>
-<br>
+<table class="table wine-form-3">
+  <tr class="tr_1">
+    <td class="td_1">
+      <%= f.label :vintage, "年份: " %>
+    </td>
+    <td class="td_2">
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_field :vintage, :placeholder => '年份', :class => 'span12', :required => true %>
+        </div>
+      </div>
+    </td>
+    <td class="td_3"><%= f.label :region_1, "国家: " %></td>
+    <td class="td_4">
+      <div class="control-group">
+        <div class="controls">
+         <%= f.text_field :region_1, :placeholder => '国家', :class => 'span12', :required => true %>
+       </div>
+     </div>
+   </td>
+   <td class="td_5">
+    <%= f.label :region_2, "产区: " %>
+  </td>
+  <td class="td_6">
+    <div class="control-group">
+      <div class="controls">
+       <%= f.text_field :region_2, :placeholder => '产区', :class => 'span12',:required => true %>
+     </div>
+   </div>
+ </td>
+ <td class="td_7">
+   <%= f.label :region_3, "子产区: " %>
+ </td>
+ <td class="td_8">
+  <div class="control-group">
+    <div class="controls">
+     <%= f.text_field :region_3, :placeholder => '子产区', :class => 'span9' %> （选填)
+   </div>
+ </div>
+</td>
+</tr>
+</table>
 
 <table id="wine-form" class="table wine-form">
   <tr class="tr_1">
@@ -59,112 +87,22 @@ function PreviewImage() {
         </div>
       </div>
     </td>
-  </tr>
-  <tr>
-    <td>
-      <%= f.label :level, "等级: " %>
-    </td>
-    <td>
-      <div class="control-group">
-        <div class="controls">
-          <%= f.text_field :level, :placeholder => '等级, 如:DOC,AOC', :class => 'block box' %>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
 
-<table class="table wine-form-2">
-  <tr class="tr_1">
-    <td class="td_1">
-      <%= f.label :name_zh, "中文名: " %>
-    </td>
-    <td class="td_2">
-      <div class="control-group">
-        <div class="controls">
-          <%= f.text_field :name_zh, :placeholder => '酒名称（中文）',  :class => 'span3', :required => true %>
-        </div>
-      </div>
-    </td>
-  </tr>
-
-  <tr class="tr_2">
-    <td class="td_1">
-      <%= f.label :name_en, "英文名: " %>
-    </td>
-    <td class="td_4">
-      <div class="control-group">
-        <div class="controls">
-          <%= f.text_field :name_en, :placeholder => '酒名称（英文）', :class => 'span3', :required => true %>
-        </div>
-      </div>
-    </td>
-  </tr>
-</table>
-
-<table class="table wine-form-3">
-  <tr class="tr_1">
-    <td class="td_1"><%= f.label :region_1, "原产国: " %></td>
-    <td class="td_2">
-      <div class="control-group">
-        <div class="controls">
-         <%= f.text_field :region_1, :placeholder => '原产国', :class => 'span12', :required => true %>
-       </div>
-      </div>
-    </td>
     <td class="td_3">
-      <%= f.label :region_2, "产区: " %>
-    </td>
-    <td class="td_4">
-      <div class="control-group">
-        <div class="controls">
-         <%= f.text_field :region_2, :placeholder => '产区', :class => 'span12',:required => true %>
-       </div>
-      </div>
-    </td>
-    <td class="td_5">
-       <%= f.label :region_3, "子产区: " %>
-    </td>
-    <td class="td_6">
-      <div class="control-group">
-        <div class="controls">
-         <%= f.text_field :region_3, :placeholder => '子产区', :class => 'span12' %>
-       </div>
-      </div>
-    </td>
-  </tr>
-</table>
-
-<table class="table wine-form-4">
-  <tr class="tr_1">
-    <td class="td_1">
-      <%= f.label :vintage, "年份: " %>
-    </td>
-    <td class="td_2">
-      <div class="control-group">
-       
-      <div class="controls">
-        <%= f.text_field :vintage, :placeholder => '年份', :class => 'block box', :required => true %>
-      </div>
-      </div>
-    </td>
-  </tr>
-  <tr class="tr_2">
-    <td class="td_1">
       <%= f.label :alcoholicity, "酒精度: " %>
     </td>
-    <td class="td_2">
+    <td class="td_4">
       <div class="control-group">
-      <div class="controls">
-        <div class="input-prepend">
+        <div class="controls">
+          <div class="input-prepend">
            <!-- <span class="add-on"><i class="icon">%</i></span> -->
-           <%= f.text_field :alcoholicity, :placeholder => '酒精度', :class => 'block box', :required => true %>
+           <%= f.text_field :alcoholicity, :placeholder => '酒精度', :class => 'span12', :required => true %>
            <span style="background: none; border: 0" class="add-on">%Vol</i></span>
-        </div>
-      </div>
-      </div>
-    </td>
-  </tr>
+         </div>
+       </div>
+     </div>
+   </td>
+ </tr>
 </table>
 
 <table class="table wine-form-5">
@@ -184,58 +122,131 @@ function PreviewImage() {
         <p><%= link_to_add_fields "添加葡萄品种", f, :varieties, '.variety_outer' %></p>
         <br>
       </div>
-      </div>
+    </div>
 
+  </td>
+</tr>
+</table>
+
+
+<table class="table wine-form-4">
+  <tr>
+    <td class="td_1">
+      <%= f.label :market_price, "建议零售价: " %>
+    </td>
+    <td class="td_2">
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_field :market_price, :placeholder => '', :class => 'span2' %>
+          <i class="icon">元</i>
+        </div>
+      </div>
     </td>
   </tr>
 </table>
 
+
+
+<div class="controls">
+
+  图片： <br>
+
+	<% if @wine.photo.blank? %>
+	<img id="uploadPreview" data-src="holder.js/140x140" align="left" class="img-rounded" alt="酒标" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAFD0lEQVR4Xu3Y2ytsYRyH8d84n8rxxjkuCEVJDhF/Oy6Qcs6FiBtyapBjTrP7vTUTew/b155Xe6ZnrrZ891r1rE9r1pJIJpMp40OBLxZIAOaLpZiFAoABglQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxnkN5unpyTY2Nqy4uNgGBgastLQ06xVNJpP28PBgLS0t4fdXV1e2trZm/v8bGxttaGjIioqKPtXwk+f6n1nmNZj7+3s7ODiww8NDm5yctMrKyj9av7y82Pz8vPX29lpzc7M9Pj6Gn/3fbW1ttr6+buXl5TY6OvrpdfrJcwEmYgEHMTs7axMTE1nBbG5u2snJSbgDOZL9/X07Pj4Oe/+kAY2Njdnt7a1VVFRYbW1t+N3p6amVlZVZXV1d+DmX56qpqYlYJd6h8/oO41men59tbm4uKxiH4mD84nR0dISvpO3t7QCrq6srU3VhYSH8/vX11XZ2dmx6etru7u5seXnZRkZGMmByea7W1tZ4VzXikQsWTPrO0d/fbzc3N1ZVVWV+kZaWlgIOv9ukP47I7yr++5WVFfOvH///nZ2d1t3dndl9BOa754p4XaMdumDBLC4uhq+T4eHhcFdJg/A7TlNT0zswW1tbVl9fH8D4147fsfyraXx83BKJxF/BfPdc0a5qxAMXJJjd3d3wMPz7x59jLi4uwluVPwT7J5VKBSA9PT0B0dnZWXgQ9o8/51RXV38K5l/OFfG6Rjt0QYLxryB/HvGPvy7v7e2FO4Z/vTgYv6PMzMwEOP7Kvbq6Gn72j+Pp6+sLr97+0Ds1NZV55c72lfTdc5WUlES7qDEPnPdg/PnBL/JHr9Uez4H4V1J7e3u4o/hzjL8R+d9gzs/Pw93Gf+cPv/63HH/Q9Z2/fTU0NNjg4GC4Brk8V8yLGvPYeQ/G41xfX4c3obfPG2+j+UOs3038mSb9OTo6CgD82SX9Gn15eRn+nT6O/7HOYaVfq3N5rpgXNeaxCwJMzEAc+30BwCBCKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKvAL5pjypnvj9I4AAAAASUVORK5CYII=">
+
+  <% else %>
+  <%= image_tag @wine.photo_url(:thumb), :size => '140x140', :align=>"left", :id => 'uploadPreview' %>
+  <% end %>
+  <script type="text/javascript">
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
+
+    oFReader.onload = function (oFREvent) {
+      document.getElementById("uploadPreview").src = oFREvent.target.result;
+    };
+
+    function PreviewImage() {
+      var oFReader = new FileReader();
+      oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
+
+      oFReader.onload = function (oFREvent) {
+        document.getElementById("uploadPreview").src = oFREvent.target.result;
+      };
+    };
+
+  </script>
+
+  <%# <img id="uploadPreview" style="width: 100px; height: 100px;" /> %>
+  <%= f.file_field :photo, :onchange => 'PreviewImage()' %>
+
+
+  <br>
+  <span >最大可传5MB的PNG、JPG、GIF图片</span>
+
+</div>
+<div class="clear" style="clear: both;"></div>
+<br>
+
+<div>
+----------------------------------------------------------------------以下为选填--------------------------------------------------------------------------------
+</div>
+<br> 
 <table class="table wine-form-6">
   <tr class="tr_1">
-    <td class="td_1" valign="top">
-      <%= f.label :sale_chanels, "建议零售价: " %>
-    </td>
+    <td class="td_1"> 销售渠道: </td>
     <td class="td_2">
      <!-- 
      <div class="controls">
       <%= f.text_field :market_price, :placeholder => '零售价', :class => 'block box' %>
-     </div> -->
+    </div> -->
 
-     <div class="control-group">
+    <div class="control-group">
      <div class="controls" >
       <div class="sale_chanel_outer" >
         <%= f.fields_for :sale_chanels do |v| %>
         <%= render "sale_chanel_fields", :f => v %>
         <% end %>
       </div>
-      <p><%= link_to_add_fields "建议零售价", f, :sale_chanels, '.sale_chanel_outer' %></p>
-     </div>
-     </div>
-    </td>
-  </tr>
+      <p><%= link_to_add_fields "添加销售渠道", f, :sale_chanels, '.sale_chanel_outer' %></p>
+    </div>
+  </div>
+</td>
+</tr>
 </table>
-
-<h3>选填</h3>
 
 <table class="table wine-form-7">
   <tr class="t4_1">
     <td class="td_1">
-      <%= f.label :winery_zh, "酒庄(中文): " %>
+      <%= f.label :winery_zh, "酒庄名称（中）: " %>
     </td>
     <td class="td_2">
       <div class="controls">
-        <%= f.text_field :winery_zh, :placeholder => '酒庄（中文）', :class => 'block box' %>
+        <%= f.text_field :winery_zh, :placeholder => '酒庄名称（中）', :class => 'span12' %>
+      </div>
+    </td>
+
+    <td class="td_3">
+      <%= f.label :winery_en, "酒庄名称(英): " %>
+    </td>
+    <td class="td_4">
+      <div class="controls">
+        <%= f.text_field :winery_en, :placeholder => '酒庄名称(英)', :class => 'span12' %>
       </div>
     </td>
   </tr>
+  </table>
 
-  <tr class="tr_2">
+  <table class="table wine-form-8">
+
+  <tr class="tr_3">
     <td class="td_1">
-      <%= f.label :winery_en, "酒庄(英文): " %>
+      <%= f.label :level, "等级: " %>
     </td>
     <td class="td_2">
-      <div class="controls">
-        <%= f.text_field :winery_en, :placeholder => '酒庄（英文）', :class => 'block box' %>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_field :level, :placeholder => '等级, 如:DOC,AOC', :class => 'block span4' %>
+        </div>
       </div>
     </td>
   </tr>
@@ -248,30 +259,30 @@ function PreviewImage() {
      <div class="controls">
        <%= f.text_field :sweetness, :placeholder => '甜度', :class => 'block box' %>
      </div>
-    </td>
-  </tr>
+   </td>
+ </tr>
 
-  <tr class="tr_4">
-    <td class="td_1">
-    </td>
-    <td class="td_2">
-     <div class="controls">
-       <%= f.check_box :is_oak, :checked => true, :class => 'block box' %>
-       是否橡木桶陈酿
-     </div>
-    </td>
-  </tr>
+ <tr class="tr_4">
+  <td class="td_1">
+  </td>
+  <td class="td_2">
+   <div class="controls">
+     <%= f.check_box :is_oak, :checked => true, :class => 'block box' %>
+     是否橡木桶陈酿
+   </div>
+ </td>
+</tr>
 
-  <tr class="tr_5">
-    <td class="td_1">
-      <%= f.label :prize_history, "获奖记录: " %>
-    </td>
-    <td class="td_2">
-      <div class="controls">
-        <%= f.text_area :prize_history, :placeholder => '获奖记录', :style => 'width: 500px;', :class => 'block box ', :size => '50x10' %>
-      </div>
-    </td>
-  </tr>
+<tr class="tr_5">
+  <td class="td_1">
+    <%= f.label :prize_history, "获奖记录: " %>
+  </td>
+  <td class="td_2">
+    <div class="controls">
+      <%= f.text_area :prize_history, :placeholder => '获奖记录', :style => 'width: 500px;', :class => 'block box ', :size => '50x10' %>
+    </div>
+  </td>
+</tr>
 
 </table>
 

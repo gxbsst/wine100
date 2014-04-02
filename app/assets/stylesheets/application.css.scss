@@ -44,25 +44,111 @@
  	}
  }
 
-.wine-form-3 {
-	.td_1 {
+ table.wine-form-2 {
+   .td_1, .td_3 {
+     width: 70px;
+     text-align: right;
+   }
 
+ }
+
+table.wine-form-3 {
+	.td_1 {
+    text-align: right;
+    width: 70px;
 	}
+  .td_2 {
+    width: 70px;
+  }
+
 	.td_3{
-		width: 40px;
+		width: 50px;
+    text-align: right;
 	}
+  .td_4 {
+    width: 90px;
+  }
+  .td_5 {
+    width: 50px;
+  }
+   .td_6 {
+    width: 90px;
+  }
 }
 
+table.wine-form {
+ .td_1, .td_3 {
+  text-align: right;
+  width: 70px;
+ }
+
+}
+
+table.wine-form-4 {
+  .td_1 {
+    width: 100px;
+    text-align: right;
+  }
+  .td_2 {
+  }
+}
+
+table.wine-form-6 {
+  .td_1 {
+    width: 120px;
+    text-align: right;
+  }
+}
+
+table.wine-form-7 {
+  // width: 400px;
+  .td_1, .td_3 {
+    width: 120px;
+    text-align: right;
+  }
+  .td_2, .td_4 {
+    // width: 140px;
+  }
+}
+table.wine-form-8 {
+  .td_1 {
+    width: 120px;
+    text-align: right;
+  }
+}
+body {
+  padding-top: 180px;
+
+}
 body .navbar-inverse, .navbar {
 
-  .navbar-inner { 
-    background-color: #ffc600;
+  .navbar-inner {
+    height: 160px;
+    padding-left: 20px;
+    // background: #FFC600 url("/images/logo.png") no-repeat 20px top;
+    background-color: #FFC600;
     background-image: none;
   }
 
   h1.brand {
-    background: url("/images/logo.jpg") no-repeat left top;
-    padding-left: 100px;
   }
 
+}
+.account-index {
+  .btn-outline {
+    margin: 20px 20px; 
+    height: 100px;
+    width: 200px;
+    // position: relative;
+    padding-top: 35px;
+    font-size: 16pt;
+  }    
+}
+body footer {
+ height: 100px;
+ background: #000;
+ text-align: center;
+ color: #FFF;
+width: 100%;
+bottom: 0;
 }

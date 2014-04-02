@@ -14,10 +14,6 @@
 </head>
 
 <style type="text/css">
-    body {
-        padding-top: 120px;
-        padding-bottom: 40px;
-    }
     .sidebar-nav {
         padding: 9px 0;
     }
@@ -45,15 +41,18 @@
         <span class="icon-bar"></span>
       </button>
       <h1 class="brand">
-        WINE100 葡萄酒录入系统
+        <a href="/">
+          <%= image_tag "/images/logo.png" %>
+        </a>
       </h1>
       <div class="nav-collapse collapse">
         <p class="navbar-text pull-right">
           <% if current_user %>
-              Logged in as <a href="#" class="navbar-link"><%= current_user.email %></a>
-              <%= link_to 'Logout', wine100_session_path(current_user), :method => :delete %>
+              您好， <a href="/wine100/accounts" class="navbar-link"><%= current_user.email %></a>
+              <%= link_to '登出', wine100_session_path(current_user), :method => :delete %>
           <% else %>
-          <%= link_to "Log in", new_wine100_session_path %>
+          <%= link_to "登录", new_wine100_session_path %>
+          <%= link_to "注册", new_wine100_session_path %>
           <% end %>
         </p>
 
@@ -73,13 +72,13 @@
 
 <%= yield %>
 
-  <footer>
-    <hr />
-    <p>&copy; 2013 <%= link_to 'WINE100.ORG', 'http://www.wine100.org/' %></p>
-  </footer>
 
 
 </div><!--/.fluid-container-->
-
+<div style="clear:both"></div>
+  <footer>
+    <hr />
+    <p>Copyright &copy; <%= Time.now.year %> <%= link_to 'WINE100.ORG', 'http://www.wine100.org/' %></p>
+  </footer>
 </body>
 </html>

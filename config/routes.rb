@@ -17,7 +17,7 @@ Wine100::Application.routes.draw do
 
   get "challenges/create"
 
-  root :to => 'wine100/wines#index'
+  root :to => 'wine100/home#index'
 
   resources :challenges
   #resources :test_papers

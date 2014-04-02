@@ -437,7 +437,7 @@
                 url : "请输入url地址",
                 number : "请收入数字",
                 rangeOverflow : "Value too high",
-                rangeUnderflow : "Value too low"
+                rangeUnderflow : "请输入8位密码"
             },
             error: {
                 force: true,       // Force messages in modern browsers

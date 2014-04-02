@@ -16,7 +16,7 @@ module Wine100
 		def create
 		  @profile = current_user.profile(params) || current_user.build_profile(params[:wine100_profile])
 		  if @profile.valid? && @profile.save
-		  	redirect_to edit_wine100_profile_path(@profile, :for => 'company')
+		  	redirect_to edit_wine100_profile_path(@profile, :for => 'contact')
 		  else
 		  	render :new
 		  end

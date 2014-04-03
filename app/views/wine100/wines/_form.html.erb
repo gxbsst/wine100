@@ -132,7 +132,7 @@
 <table class="table wine-form-4">
   <tr>
     <td class="td_1">
-      <%= f.label :market_price, "建议零售价: " %>
+      <%= f.label :market_price, "零售价: " %>
     </td>
     <td class="td_2">
       <div class="control-group">
@@ -279,19 +279,17 @@
   </td>
   <td class="td_2">
     <div class="controls">
-      <%= f.text_area :prize_history, :placeholder => '获奖记录', :style => 'width: 500px;', :class => 'block box ', :size => '50x10' %>
+      <%= f.text_area :prize_history, :placeholder => '获奖记录', :style => 'width: 500px;', :class => 'block box ', :size => '100x6' %>
     </div>
   </td>
 </tr>
 
 </table>
+<div class="button-outer">
+  <button class="btn btn-lg btn-primary" type="submit">确 定</button>
+  <button type="reset" class="btn btn-lg">重 置</button>
+</div>
 
-
-
-<br>
-
-<button class="btn btn-large btn-primary" type="submit">确定</button>
-<button type="reset" class="btn btn-large">重置</button>
 
 
 <!-- <button class="btn btn-large btn-primary" type="submit">下一步</button> -->

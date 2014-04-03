@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140324035914) do
+ActiveRecord::Schema.define(:version => 20140403153556) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -304,10 +304,11 @@ ActiveRecord::Schema.define(:version => 20140324035914) do
     t.string   "barcode"
     t.boolean  "is_oak",          :default => true
     t.text     "prize_history"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "wine100_user_id"
     t.integer  "photo_id"
+    t.boolean  "status",          :default => false
   end
 
 end

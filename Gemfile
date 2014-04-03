@@ -13,6 +13,7 @@ group :development, :test do
   gem "binding_of_caller"
   gem 'pry'  # "binding.pry" in action
   gem 'sextant'
+  gem 'debugger'
   gem 'capistrano-unicorn', :require => false
 end
 

@@ -5,23 +5,47 @@
 	$('.lightbox').lightbox();
 	</script>
 	<div class="span9">
-
 		<div class="alert">
 		  <button type="button" class="close" data-dismiss="alert">&times;</button>
 		  <strong>注意! </strong> 修改点击编辑，取消参赛点击删除.
 		</div>
 
 		<div class="page-header">
-			<h2>参赛酒列表</h2>
+			<h2>
+				参赛酒列表
+				<!-- Button trigger modal -->
+				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#comfirm-complete">
+				  完成录入》
+				</button>
+			</h2>
 		</div>
+
+		<div class="modal fade" id="comfirm-complete">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title">信息</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>您确定将所有酒当做参赛用酒？</p>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		      	<%= link_to '确定', complete_wine_wine100_wines_path, :class => 'btn btn-primary' %>
+		      </div>
+
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
 		
 		<% if !@wines.blank? %>
-		<table class="table table-condensed">
+		<table class="table table-condensed winelist">
 			<thead>
 				<tr>
 					<th>酒标</th>
-					<th>名字</th>
-					<th>参数</th>
+					<th>酒信息</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -32,12 +56,20 @@
 					<td  class="thumbnails" data-toggle="lightbox">
 						<a data-toggle="lightbox" href="<%=  wine.photo_url()  %>" class="thumbnail">
 							
-							<%= image_tag wine.photo_url(:thumb), :size => '100x100' %>
+							<%= image_tag wine.photo_url(:thumb) %>
 						</a>
 
 					</td>
-					<td><%= wine.name %></td>
-					<td><%= raw wine.spec %></td>
+					<td>
+
+					<strong>酒名：</strong><%= wine.name %> <br />
+					<strong>葡萄品种-百分比:</strong><br>
+					<%= raw wine.varieties_text %> <br />
+					<strong>酒类型: </strong><%= wine.style %><br>
+					<strong>产区: </strong><%= wine.region %><br>
+					<%= raw wine.spec %>
+					</td>
+					
 					<td>
 						<%= link_to '编辑', edit_wine100_wine_path(wine, :step => 1) %>
 						&nbsp;

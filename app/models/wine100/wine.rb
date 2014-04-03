@@ -12,7 +12,6 @@ class Wine100::Wine < Refinery::Core::BaseModel
   belongs_to :user, :class_name => 'Wine100::User', :foreign_key => 'wine100_user_id'#, :inverse_of => 'wines'
   belongs_to :image, :foreign_key => 'photo_id'
 
-
   def region
    "#{region_1} - #{region_2} - #{region_3}" 
   end
@@ -25,7 +24,18 @@ class Wine100::Wine < Refinery::Core::BaseModel
   	"#{vintage} #{name_zh} #{name_en}"
   end
 
+  def varieties_text
+    return "无" if !varieties.present?
+    maps = varieties.map do |v|
+      "#{v.name_en} - #{v.percentage}"
+    end.join("<br />")
+  end
+
   def spec
-  	"酒精度: #{alcoholicity} <br/> 条形码: #{barcode}"
+  	"酒精度: #{alcoholicity}"
+  end
+
+  def completed!
+    self.update_attribute(:status, true)
   end
 end

@@ -31,11 +31,11 @@ module Wine100
     end
 
     def edit
-      @wine = Wine100::Wine.find(params[:id])
+      @wine = current_user.wines.find(params[:id])
     end
 
     def update
-      @wine = Wine100::Wine.find(params[:id])
+      @wine = current_user.wines.find(params[:id])
       if @wine.update_attributes(params[:wine100_wine])
         flash[:notice] = '保存成功'
         if params[:step] == '1'
@@ -48,7 +48,6 @@ module Wine100
       end
     end
 
-
     def destroy 
       @wine = Wine100::Wine.find(params[:id])
       if @wine.destroy
@@ -57,6 +56,15 @@ module Wine100
         flash[:error] = '删除失败'
       end
       redirect_to wine100_wines_path
+    end
+
+    def complete
+     if current_user.finish_import!
+       flash[:notice] = '恭喜！您的酒已经被选做参赛成功'
+     else
+       flash[:error] = '错误： 请联系系统管理员'
+     end
+     redirect_to wine100_wines_path
     end
 
     private

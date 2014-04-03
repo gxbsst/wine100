@@ -35,4 +35,21 @@ class Wine100::User < ActiveRecord::Base
   def profile_completed?
      profile.present? && profile.completed?
   end
+
+  # WINES
+  def finish_import!
+    return false if !self.wines.present?
+    self.wines.each(&:completed!)
+    true
+  end
+
+  def finish_import?
+    all_wines = self.wines
+    return false if !all_wines.present?
+    if all_wines.last.status
+      true
+    else
+      false
+    end
+  end
 end

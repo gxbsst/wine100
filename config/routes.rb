@@ -4,7 +4,12 @@ Wine100::Application.routes.draw do
     resources :sessions
     resources :registrations
     resources :wine100
-    resources :wines
+    resources :wines do 
+      collection do 
+        get :complete, :as => :complete_wine
+        get :cancle, :as => :cancle_wine
+      end
+    end
     resources :accounts do 
       collection do 
         get :complete

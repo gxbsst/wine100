@@ -23,9 +23,10 @@ module Wine100
       @wine = Wine100::Wine.new(params[:wine100_wine])
       @wine.wine100_user_id = current_user.id
       if @wine.save
-        flash[:notice] = '保存成功'
-        redirect_to edit_wine100_wine_path(@wine, :step => 2)
+        flash[:notice] = '创建成功'
+        redirect_to wine100_wines_path()
       else
+        flash[:error] = '创建失败'
         render :new
       end
     end
@@ -37,13 +38,10 @@ module Wine100
     def update
       @wine = current_user.wines.find(params[:id])
       if @wine.update_attributes(params[:wine100_wine])
-        flash[:notice] = '保存成功'
-        if params[:step] == '1'
-          redirect_to edit_wine100_wine_path(@wine, :step => 2)
-        else
-          redirect_to wine100_wines_path()
-        end
+        flash[:notice] = '更新成功'
+        redirect_to wine100_wines_path()
       else
+        flash[:error] = '更新失败'
         render(:edit)
       end
     end

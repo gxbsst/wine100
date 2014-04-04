@@ -30,7 +30,7 @@ class Wine100::Wine < Refinery::Core::BaseModel
     return "无" if !varieties.present?
     varieties.map do |v|
       "#{v.name_en} - #{v.percentage}"
-    end.join("<br />")
+    end.join(";")
   end
 
   def spec

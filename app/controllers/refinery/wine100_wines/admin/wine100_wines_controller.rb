@@ -4,7 +4,7 @@ module Refinery
     module Admin
       class Wine100WinesController < ::Refinery::AdminController
 
-        EXCEL_TITLES = ['name',  'region', 'style', 'vintage', 'alcoholicity',  'winery', 'level', 'sweetness', 'is_oak', 'prize_history', 'varieties', 'sales']
+        EXCEL_TITLES = ['company', 'name',  'region', 'style', 'vintage', 'alcoholicity',  'winery', 'level', 'sweetness', 'is_oak', 'prize_history', 'varieties', 'sales']
 
         crudify :'refinery/wine100_wines/wine100_wine',
                 :title_attribute => 'style', :xhr_paging => true

@@ -5,7 +5,7 @@ xlsx_package.use_shared_strings = true
 wb = xlsx_package.workbook
 wb.add_worksheet(name: 'all_wines') do |sheet|
   sheet.add_row @titles
-  blue = sheet.styles.add_style :color => "#00FF00"
+  sheet.styles.add_style :color => "#00FF00"
   title = sheet.styles.add_style(
       :fg_color=>"#CCCCCCCC",
       :sz=>12,
@@ -29,7 +29,7 @@ wb.add_worksheet(name: 'all_wines') do |sheet|
           ""
         end
 
-    row_data = [r.name, r.region , r.style , r.vintage, r.alcoholicity, r.winery_name, r.level, r.sweetness, is_oak, r.prize_history, v,  s]
+    row_data = [r.company_name, r.name, r.region , r.style , r.vintage, r.alcoholicity, r.winery_name, r.level, r.sweetness, is_oak, r.prize_history, v,  s]
     sheet.add_row row_data, :height => 30, :style =>  title
     #Axlsx::STYLE_THIN_BORDER
   end

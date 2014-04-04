@@ -12,20 +12,32 @@
     <td class="td_1">
       <%= f.label :name_zh, "中文名: " %>
     </td>
+    <td class="td_2" colspan="3">
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_field :name_zh, :placeholder => '中文名',  :class => 'span5', :required => true %>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td class="td_1">
+      <%= f.label :name_en, "英文名: " %>
+    </td>
     <td class="td_2">
       <div class="control-group">
         <div class="controls">
-          <%= f.text_field :name_zh, :placeholder => '中文名',  :class => 'span12', :required => true %>
+          <%= f.text_field :name_en, :placeholder => '英文名', :class => 'span11', :required => true %>
         </div>
       </div>
     </td>
     <td class="td_3">
-      <%= f.label :name_en, "英文名: " %>
+      <%= f.label :vintage, "年份: " %>
     </td>
     <td class="td_4">
       <div class="control-group">
         <div class="controls">
-          <%= f.text_field :name_en, :placeholder => '英文名', :class => 'span12', :required => true %>
+          <%= f.text_field :vintage, :placeholder => '年份', :class => 'span2', :required => true %>
         </div>
       </div>
     </td>
@@ -35,23 +47,15 @@
 <table class="table wine-form-3">
   <tr class="tr_1">
     <td class="td_1">
-      <%= f.label :vintage, "年份: " %>
+      <%= f.label :region_1, "国家: " %>
     </td>
     <td class="td_2">
-      <div class="control-group">
-        <div class="controls">
-          <%= f.text_field :vintage, :placeholder => '年份', :class => 'span12', :required => true %>
-        </div>
-      </div>
-    </td>
-    <td class="td_3"><%= f.label :region_1, "国家: " %></td>
-    <td class="td_4">
       <div class="control-group">
         <div class="controls">
          <%= f.text_field :region_1, :placeholder => '国家', :class => 'span12', :required => true %>
        </div>
      </div>
-   </td>
+    </td>
    <td class="td_5">
     <%= f.label :region_2, "产区: " %>
   </td>

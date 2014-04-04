@@ -40,6 +40,8 @@ namespace :deploy do
 
   task :setup_config, roles: :app do
     run "mkdir -p #{shared_path}/config"
+    run "mkdir -p #{shared_path}/system"
+    run "mkdir -p #{shared_path}/uploads"
     put File.read("config/database.yml.mysql"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
@@ -48,6 +50,8 @@ namespace :deploy do
 
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/system #{release_path}/public/system"
+    run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
   end
   after "deploy:finalize_update", "deploy:symlink_config"
 

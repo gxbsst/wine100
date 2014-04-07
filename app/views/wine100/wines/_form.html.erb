@@ -72,7 +72,7 @@
  <td class="td_8">
   <div class="control-group">
     <div class="controls">
-     <%= f.text_field :region_3, :placeholder => '子产区', :class => 'span9' %> （选填)
+     <%= f.text_field :region_3, :placeholder => '子产区（选填)', :class => 'span12' %> 
    </div>
  </div>
 </td>
@@ -100,7 +100,7 @@
         <div class="controls">
           <div class="input-prepend">
            <!-- <span class="add-on"><i class="icon">%</i></span> -->
-           <%= f.text_field :alcoholicity, :placeholder => '酒精度', :class => 'span12', :required => true %>
+           <%= f.text_field :alcoholicity, :placeholder => '酒精度比如12.5', :class => 'span12', :required => true %>
            <span style="background: none; border: 0" class="add-on">%Vol</i></span>
          </div>
        </div>
@@ -122,6 +122,10 @@
           <%= f.fields_for :varieties do |v| %>
           <%= render "variety_fields", :f => v %>
           <% end %>
+        </div>
+        <div class="alert">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          如果多于一个葡萄品种请点击"添加葡萄品种".
         </div>
         <p><%= link_to_add_fields "添加葡萄品种", f, :varieties, '.variety_outer' %></p>
         <br>
@@ -153,39 +157,42 @@
 
 <div class="controls">
 
-  图片： <br>
+  <table class="image-table" >
+   
+    <tr>
+      <td class="td_1">
+        <% if @wine.photo.blank? %>
+        <img id="uploadPreview" align="left" class="img-rounded" alt="酒标"  src="/images/demo.png">
+        <% else %>
+        <%= image_tag @wine.photo_url(:thumb), :size => '140x140', :align=>"left", :id => 'uploadPreview' %>
+        <% end %>
+        <script type="text/javascript">
+          var oFReader = new FileReader();
+          oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
 
-	<% if @wine.photo.blank? %>
-	<img id="uploadPreview" data-src="holder.js/140x140" align="left" class="img-rounded" alt="酒标" style="width: 140px; height: 140px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACMCAYAAACuwEE+AAAFD0lEQVR4Xu3Y2ytsYRyH8d84n8rxxjkuCEVJDhF/Oy6Qcs6FiBtyapBjTrP7vTUTew/b155Xe6ZnrrZ891r1rE9r1pJIJpMp40OBLxZIAOaLpZiFAoABglQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxoDBgFQAMFIuxnkN5unpyTY2Nqy4uNgGBgastLQ06xVNJpP28PBgLS0t4fdXV1e2trZm/v8bGxttaGjIioqKPtXwk+f6n1nmNZj7+3s7ODiww8NDm5yctMrKyj9av7y82Pz8vPX29lpzc7M9Pj6Gn/3fbW1ttr6+buXl5TY6OvrpdfrJcwEmYgEHMTs7axMTE1nBbG5u2snJSbgDOZL9/X07Pj4Oe/+kAY2Njdnt7a1VVFRYbW1t+N3p6amVlZVZXV1d+DmX56qpqYlYJd6h8/oO41men59tbm4uKxiH4mD84nR0dISvpO3t7QCrq6srU3VhYSH8/vX11XZ2dmx6etru7u5seXnZRkZGMmByea7W1tZ4VzXikQsWTPrO0d/fbzc3N1ZVVWV+kZaWlgIOv9ukP47I7yr++5WVFfOvH///nZ2d1t3dndl9BOa754p4XaMdumDBLC4uhq+T4eHhcFdJg/A7TlNT0zswW1tbVl9fH8D4147fsfyraXx83BKJxF/BfPdc0a5qxAMXJJjd3d3wMPz7x59jLi4uwluVPwT7J5VKBSA9PT0B0dnZWXgQ9o8/51RXV38K5l/OFfG6Rjt0QYLxryB/HvGPvy7v7e2FO4Z/vTgYv6PMzMwEOP7Kvbq6Gn72j+Pp6+sLr97+0Ds1NZV55c72lfTdc5WUlES7qDEPnPdg/PnBL/JHr9Uez4H4V1J7e3u4o/hzjL8R+d9gzs/Pw93Gf+cPv/63HH/Q9Z2/fTU0NNjg4GC4Brk8V8yLGvPYeQ/G41xfX4c3obfPG2+j+UOs3038mSb9OTo6CgD82SX9Gn15eRn+nT6O/7HOYaVfq3N5rpgXNeaxCwJMzEAc+30BwCBCKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKgAYKRdjwGBAKvAL5pjypnvj9I4AAAAASUVORK5CYII=">
+          oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview").src = oFREvent.target.result;
+          };
 
-  <% else %>
-  <%= image_tag @wine.photo_url(:thumb), :size => '140x140', :align=>"left", :id => 'uploadPreview' %>
-  <% end %>
-  <script type="text/javascript">
-    var oFReader = new FileReader();
-    oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
+          function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
 
-    oFReader.onload = function (oFREvent) {
-      document.getElementById("uploadPreview").src = oFREvent.target.result;
-    };
-
-    function PreviewImage() {
-      var oFReader = new FileReader();
-      oFReader.readAsDataURL(document.getElementById("wine100_wine_photo").files[0]);
-
-      oFReader.onload = function (oFREvent) {
-        document.getElementById("uploadPreview").src = oFREvent.target.result;
-      };
-    };
-
-  </script>
-
-  <%# <img id="uploadPreview" style="width: 100px; height: 100px;" /> %>
-  <%= f.file_field :photo, :onchange => 'PreviewImage()' %>
-
-
-  <br>
-  <span >最大可传5MB的PNG、JPG、GIF图片</span>
+            oFReader.onload = function (oFREvent) {
+              document.getElementById("uploadPreview").src = oFREvent.target.result;
+            };
+          };
+        </script>
+      </td>
+      <td class="td_2">
+        <%= f.file_field :photo, :onchange => 'PreviewImage()' %>
+        <div class="alert">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          最大可传5MB的PNG、JPG、GIF图片.
+        </div>
+      </td>
+    </tr>
+  </table>
 
 </div>
 <div class="clear" style="clear: both;"></div>

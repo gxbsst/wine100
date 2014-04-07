@@ -1,14 +1,20 @@
 <div class="page-header">
-<h2>联系信息</h2>
+	<h2>联系人信息</h2>
 </div>
+<div class="alert">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	负责WINE100葡萄酒大赛联络的主要联系人。
+</div>
+
 <div class="control-group">
+	<%= f.label :contact_name, "姓名:" %>
 	<div class="controls">	
 		<%= f.text_field :contact_name, :placeholder => '姓名', :class => 'span6', :required => true %>
 		<span class="red">*</span>
 	</div>
 </div>
 <div class="control-group">
-
+	<%= f.label :contact_job, "职位:" %>
 	<div class="controls">
 		<%= f.text_field :contact_job, :placeholder => '职位', :class => 'span6', :required => true %>
 		<span class="red">*</span>
@@ -16,12 +22,14 @@
 </div>
 
 <div class="control-group">
+	<%= f.label :contact_phone, "电话:" %>
 	<div class="controls">
 		<%= f.text_field :contact_phone, :placeholder => '电话', :class => 'span6', :required => true %>
 		<span class="red">*</span>
 	</div>
 </div>
 <div class="control-group">
+	<%= f.label :contact_email, "邮箱:" %>
 	<div class="controls">
 		<%= f.email_field :contact_email, :placeholder => '邮箱', :class => 'span6', :required => true %>
 		<span class="red">*</span>

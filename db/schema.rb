@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140403153556) do
+ActiveRecord::Schema.define(:version => 20140407135641) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -246,8 +246,9 @@ ActiveRecord::Schema.define(:version => 20140403153556) do
     t.string   "finance_name"
     t.string   "finance_phone"
     t.integer  "wine100_user_id"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "company_phone_area_code"
   end
 
   create_table "wine100_sale_chanels", :force => true do |t|

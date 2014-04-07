@@ -2,27 +2,67 @@
 	<%= render 'wine100/accounts/sidebar' %>
 	<div class="span9">
 	
+		<ul class="breadcrumb">
+
+			<% if params[:for] == 'company' %>
+			<li>
+				<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
+			</li>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<li>
+				<a class="btn btn-large" href="#">2. 联系信息</a>
+			</li>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<li>
+				<a class="btn  btn-large" href="#">3. 财务信息</a>
+			</li>
+			<% elsif params[:for] == 'contact' %>
+			<li>
+				<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
+			</li>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<li>
+				<a class="btn btn-success btn-primary btn-large" href="#">2. 联系信息</a>
+			</li>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<li>
+				<a class="btn btn-large" href="#">3. 财务信息</a>
+			</li>
+			<% else %>
+			<li>
+				<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
+			</li>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<li>
+				<a class="btn btn-success btn-primary btn-large" href="#">2. 联系信息</a>
+			</li>
+			<i class="glyphicon glyphicon-chevron-right"></i>
+			<li>
+				<a class="btn btn-success btn-primary btn-large" href="#">3. 财务信息</a>
+			</li>
+			<% end %>
+		</ul>
 
 		<%= form_for @profile, :url => wine100_profile_path(@profile, :for => params[:for] ), :class => 'form-signin' do |f| %>
 		
-		  <% if params[:for] == 'contact'  %>
-			<%= render 'form_contact', :f => f %>
-			<% end %>
+		<% if params[:for] == 'contact'  %>
+		<%= render 'form_contact', :f => f %>
+		<% end %>
 
-			<% if params[:for] == 'company' %>
-			<%= render 'form_company', :f => f %>
-			<% end %>
-			<% if params[:for] == 'finance' %>
-			<%= render 'form_finance', :f => f %>
-			<% end %>
-	
-			<% if params[:for] == 'contact' %>
-				<button class="btn btn-large btn-primary" type="submit">去完成财务信息 》</button>
-			<% elsif params[:for] == 'company' %>
-				<button class="btn btn-large btn-primary" type="submit">去完成联系信息》</button>
-			<% else %>
-				<button class="btn btn-large btn-primary" type="submit">完成注册信息 》</button>
-			<% end %>
+		<% if params[:for] == 'company' %>
+		<%= render 'form_company', :f => f %>
+		<% end %>
+		<% if params[:for] == 'finance' %>
+		<%= render 'form_finance', :f => f %>
+		<% end %>
+
+		<% if params[:for] == 'contact' %>
+		<button class="btn btn-large btn-primary" type="submit">去完成财务信息 》</button>
+		<% elsif params[:for] == 'company' %>
+		<button class="btn btn-large btn-primary" type="submit">去完成联系信息》</button>
+		<% else %>
+		<button class="btn btn-large btn-primary" type="submit">完成注册信息 》</button>
+		<% end %>
 
 		<% end %>
 

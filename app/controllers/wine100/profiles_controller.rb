@@ -10,16 +10,16 @@ module Wine100
 		end
 		
 		def new
-		 @profile = current_user.build_profile 
+			@profile = current_user.build_profile 
 		end
 
 		def create
-		  @profile = current_user.profile(params) || current_user.build_profile(params[:wine100_profile])
-		  if @profile.valid? && @profile.save
-		  	redirect_to edit_wine100_profile_path(@profile, :for => 'contact')
-		  else
-		  	render :new
-		  end
+			@profile = current_user.profile(params) || current_user.build_profile(params[:wine100_profile])
+			if @profile.valid? && @profile.save
+				redirect_to edit_wine100_profile_path(@profile, :for => 'contact')
+			else
+				render :new
+			end
 		end
 
 		def edit
@@ -35,8 +35,9 @@ module Wine100
 				when 'contact'
 					step = 'finance'
 				else
-				redirect_to new_wine100_wine_path
-				return 
+					flash[:notice] = '您的信息已经录入， 现在可录入参赛用酒.'
+					redirect_to new_wine100_wine_path
+					return 
 				end
 				redirect_to edit_wine100_profile_path(@profile, :for => step)
 				
@@ -46,7 +47,7 @@ module Wine100
 			end
 		end
 
-	 protected	
+		protected	
 
 		def get_profile
 			@profile = current_user.profile  || current_user.build_profile

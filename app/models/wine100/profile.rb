@@ -15,6 +15,7 @@ class Wine100::Profile < ActiveRecord::Base
       :company_phone,
       :company_website,
       :company_wines_count,
+      :company_phone_area_code,
 
       :finance_title,
       :finance_tax_num,

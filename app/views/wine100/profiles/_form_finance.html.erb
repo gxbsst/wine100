@@ -3,6 +3,7 @@
 <h2>财务信息</h2>
 </div>
 <div class="control-group">
+<%= f.label :finance_title, "发票抬头:" %>
   <div class="controls">
     <%= f.text_field :finance_title, :placeholder => '发票抬头', :class => ' span6' %>
 		<span class="red">*</span>
@@ -10,6 +11,7 @@
 </div>
 
 <div class="control-group">
+<%= f.label :finance_tax_num, "税务登记号:" %>
   <div class="controls">
     <%= f.text_field :finance_tax_num, :placeholder => '税务登记号', :class => ' span6' %>
 		<span class="red">*</span>
@@ -17,13 +19,15 @@
 </div>
 
 <div class="control-group">
+<%= f.label :finance_add, "发票邮寄地址:" %>
   <div class="controls">
-    <%= f.text_field :finance_add, :placeholder => '公司地址', :class => ' span6' %>
+    <%= f.text_field :finance_add, :placeholder => '发票邮寄地址', :class => ' span6' %>
 		<span class="red">*</span>
   </div>
 </div>
 
 <div class="control-group">
+<%= f.label :finance_name, "财务联系人:" %>
   <div class="controls">
     <%= f.text_field :finance_name, :placeholder => '财务联系人', :class => ' span6' %>
 		<span class="red">*</span>
@@ -31,6 +35,7 @@
 </div>
 
 <div class="control-group">
+<%= f.label :finance_phone, "联系人电话:" %>
   <div class="controls">
     <%= f.text_field :finance_phone, :placeholder => '联系人电话', :class => 'span6' %>
 		<span class="red">*</span>

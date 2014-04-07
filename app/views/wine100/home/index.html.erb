@@ -3,29 +3,8 @@
     <div class="page-header">
       <h2>操作顺序</h2>
     </div>
-    <%= link_to new_wine100_session_path, :class => 'btn btn-lg btn-outline' do  %>
-      <span>1. 完成注册</span>
-    <% end %>
-    <span class="glyphicon glyphicon-arrow-right"></span>
-    <%= link_to new_wine100_session_path, :class => 'btn btn-lg btn-outline' do  %>
-      <span>2. 登录</span>
-    <% end %>
-
-    <span class="glyphicon glyphicon-arrow-right"></span>
-    <%= link_to  new_wine100_wine_path(), :class => 'btn btn-lg btn-outline' do  %>
-      3. 上传参赛酒
-  <% end %>
-
-    <span class="glyphicon glyphicon-arrow-right"></span>
-
-    <a class="btn btn-lg btn-outline">
-      4. 确认信息
-    </a>
-
-    <span class="glyphicon glyphicon-arrow-right"></span>
-    <a class="btn btn-lg btn-outline">
-      5. 完成录入
-    </a>
+    <%= render 'wine100/accounts/step' %>
+    
     <!--end span9 -->
   </div> 
 </div>

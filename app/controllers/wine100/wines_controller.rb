@@ -28,7 +28,7 @@ module Wine100
       @wine.wine100_user_id = current_user.id
       if @wine.save
         flash[:notice] = '创建成功'
-        redirect_to wine100_wines_path()
+        redirect_to wine100_wines_path(:status => 'draft')
       else
         flash[:error] = '创建失败'
         render :new
@@ -53,7 +53,7 @@ module Wine100
 
       if @wine.update_attributes(params[:wine100_wine])
         flash[:notice] = '更新成功'
-        redirect_to wine100_wines_path()
+        redirect_to wine100_wines_path(:status => 'draft')
       else
         flash[:error] = '更新失败'
         render(:edit)
@@ -62,12 +62,20 @@ module Wine100
 
     def destroy 
       @wine = Wine100::Wine.find(params[:id])
+
+      if @wine.status
+        flash[:error] = '该酒已经是参赛用酒， 不能删除， 如果需要删除， 请联系系统管理员。'
+        redirect_to wine100_wines_path(:status => :on)
+        return
+      end
+
+
       if @wine.destroy
         flash[:notice] = '删除成功'
       else
         flash[:error] = '删除失败'
       end
-      redirect_to wine100_wines_path
+      redirect_to wine100_wines_path(:status => 'draft')
     end
 
     def complete
@@ -76,7 +84,7 @@ module Wine100
      else
        flash[:error] = '错误： 请联系系统管理员'
      end
-     redirect_to wine100_wines_path
+     redirect_to wine100_wines_path(:status => 'on')
     end
 
     def one_complete
@@ -87,7 +95,7 @@ module Wine100
      else
        flash[:error] = '错误： 请联系系统管理员'
      end
-     redirect_to wine100_wines_path
+     redirect_to wine100_wines_path(:status => 'on')
     end
 
     private

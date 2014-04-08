@@ -79,12 +79,16 @@
 					</td>
 					
 					<td>
+					
+					  <% if !wine.status %>
 						<%= link_to '编辑', edit_wine100_wine_path(wine, :step => 1) %>
 						&nbsp;
 						&nbsp;
 						<%= link_to '删除', wine100_wine_path(wine), :method => :delete %>
 						&nbsp;
 						&nbsp;
+						<% end %>
+
 						<% if wine.status %>
 						<span class="label label-success">已参赛</span>
 						<% else %>

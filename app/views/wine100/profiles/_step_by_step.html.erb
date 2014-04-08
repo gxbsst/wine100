@@ -1,0 +1,40 @@
+<ul class="breadcrumb">
+
+	<% if params[:for] == 'company' %>
+	<li>
+		<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
+	</li>
+	<i class="glyphicon glyphicon-chevron-right"></i>
+	<li>
+		<a class="btn btn-large" href="#">2. 联系信息</a>
+	</li>
+	<i class="glyphicon glyphicon-chevron-right"></i>
+	<li>
+		<a class="btn  btn-large" href="#">3. 财务信息</a>
+	</li>
+	<% elsif params[:for] == 'contact' %>
+	<li>
+		<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
+	</li>
+	<i class="glyphicon glyphicon-chevron-right"></i>
+	<li>
+		<a class="btn btn-success btn-primary btn-large" href="#">2. 联系信息</a>
+	</li>
+	<i class="glyphicon glyphicon-chevron-right"></i>
+	<li>
+		<a class="btn btn-large" href="#">3. 财务信息</a>
+	</li>
+	<% else %>
+	<li>
+		<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
+	</li>
+	<i class="glyphicon glyphicon-chevron-right"></i>
+	<li>
+		<a class="btn btn-success btn-primary btn-large" href="#">2. 联系信息</a>
+	</li>
+	<i class="glyphicon glyphicon-chevron-right"></i>
+	<li>
+		<a class="btn btn-success btn-primary btn-large" href="#">3. 财务信息</a>
+	</li>
+	<% end %>
+</ul>

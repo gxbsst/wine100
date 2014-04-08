@@ -14,6 +14,9 @@ class Wine100::Wine < Refinery::Core::BaseModel
 
   delegate :profile, :to => :user
 
+  scope :draft, -> { where(:status => false)}
+  scope :online, -> { where(:status => true)}
+
   def region
    "#{region_1} - #{region_2} - #{region_3}" 
   end

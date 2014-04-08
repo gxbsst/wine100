@@ -2,48 +2,7 @@
 	<%= render 'wine100/accounts/sidebar' %>
 	<div class="span9">
 
-	
-	<ul class="breadcrumb">
-
-		<% if params[:for] == 'company' %>
-		<li>
-			<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
-		</li>
-		<i class="glyphicon glyphicon-chevron-right"></i>
-		<li>
-			<a class="btn btn-large" href="#">2. 联系信息</a>
-		</li>
-		<i class="glyphicon glyphicon-chevron-right"></i>
-		<li>
-			<a class="btn btn-large" href="#">3. 财务信息</a>
-		</li>
-		<% elsif params[:for] == 'contact' %>
-		<li>
-			<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
-		</li>
-		<i class="glyphicon glyphicon-chevron-right"></i>
-		<li>
-			<a class="btn btn-success btn-primary btn-large" href="#">2. 联系信息</a>
-		</li>
-		<i class="glyphicon glyphicon-chevron-right"></i>
-		<li>
-			<a class="btn btn-large" href="#">3. 财务信息</a>
-		</li>
-		<% else %>
-		<li>
-			<a class="btn btn-success btn-primary btn-large" href="#">1. 公司信息 </a>
-		</li>
-		<i class="glyphicon glyphicon-chevron-right"></i>
-		<li>
-			<a class="btn btn-success btn-primary btn-large" href="#">2. 联系信息</a>
-		</li>
-		<i class="glyphicon glyphicon-chevron-right"></i>
-		<li>
-			<a class="btn btn-success btn-primary btn-large" href="#">3. 财务信息</a>
-		</li>
-		<% end %>
-	</ul>
-
+		<%= render 'step_by_step' %>
 		
 		<%= form_for @profile, :url => wine100_profiles_path(:for => params[:for]), :class => 'form-signin' do |f| %>
 
@@ -64,8 +23,6 @@
 		<% else %>
 			<button class="btn btn-large btn-primary" type="submit">完成注册信息 》</button>
 		<% end %>
-
-	
 		<% end %>
 
 	</div><!--/span-->

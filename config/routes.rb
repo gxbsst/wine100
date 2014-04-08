@@ -9,6 +9,9 @@ Wine100::Application.routes.draw do
         get :complete, :as => :complete_wine
         get :cancle, :as => :cancle_wine
       end
+      member do 
+        get :one_complete, :as => :one_complete
+      end
     end
     resources :accounts do 
       collection do 

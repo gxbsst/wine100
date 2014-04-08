@@ -10,7 +10,11 @@ module Wine100
     before_filter :get_profile
 
     def index
-      @wines = current_user.wines
+      if params[:status] == 'draft'
+        @wines = current_user.wines.draft
+      else
+        @wines = current_user.wines.online
+      end
     end
 
     def new
@@ -33,10 +37,20 @@ module Wine100
 
     def edit
       @wine = current_user.wines.find(params[:id])
+      if @wine.status
+        flash[:error] = '该酒已经是参赛用酒， 不能编辑， 如果需要更新， 请联系系统管理员。'
+        redirect_to wine100_wines_path(:status => :on)
+      end
     end
 
     def update
       @wine = current_user.wines.find(params[:id])
+
+      if @wine.status
+        flash[:error] = '该酒已经是参赛用酒， 不能编辑， 如果需要更新， 请联系系统管理员。'
+        redirect_to wine100_wines_path(:status => :on)
+      end
+
       if @wine.update_attributes(params[:wine100_wine])
         flash[:notice] = '更新成功'
         redirect_to wine100_wines_path()
@@ -58,6 +72,17 @@ module Wine100
 
     def complete
      if current_user.finish_import!
+       flash[:notice] = '恭喜！您的酒已经被选做参赛成功'
+     else
+       flash[:error] = '错误： 请联系系统管理员'
+     end
+     redirect_to wine100_wines_path
+    end
+
+    def one_complete
+      wine = Wine100::Wine.find(params[:id])
+
+     if wine.completed!
        flash[:notice] = '恭喜！您的酒已经被选做参赛成功'
      else
        flash[:error] = '错误： 请联系系统管理员'

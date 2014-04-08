@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140407135641) do
+ActiveRecord::Schema.define(:version => 20140408054707) do
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"
@@ -270,9 +270,11 @@ ActiveRecord::Schema.define(:version => 20140407135641) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "phone"
-    t.boolean  "is_completed",        :default => false
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.boolean  "is_completed",              :default => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.string   "fogot_password_token"
+    t.datetime "fogot_password_created_at"
   end
 
   create_table "wine100_varieties", :force => true do |t|

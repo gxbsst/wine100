@@ -20,7 +20,13 @@ Wine100::Application.routes.draw do
     end
     resources :home
     resources :profiles
-    resources :passwords
+    resources :passwords do 
+      collection do 
+        get :forgot , :as => :forgot
+        post :forgot, :as => :forgot  
+        get :reset, :as => :reset    
+      end
+    end
   end
 
   get "challenges/create"

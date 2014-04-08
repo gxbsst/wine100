@@ -1,0 +1,10 @@
+尊敬的<%= @user.email %>:
+
+请点击以下链接，重置你的密码: 
+
+<%= link_to "重置密码",  reset_wine100_passwords_url(:k => @user.fogot_password_token )%>
+
+---
+WINE100葡萄酒大赛参赛酒录入系统(Registration.Wine100.org)
+
+(这是一封系统自动产生的email，请勿回复。)

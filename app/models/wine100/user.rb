@@ -9,7 +9,7 @@ class Wine100::User < ActiveRecord::Base
   attr_accessible :name, :password, :email, :password_confirmation, :builder_id, 
   :last_sign_in_at, :remember_created_at, :current_sign_in_ip, :last_sign_in_ip, 
   :position, :password_cleartext,
-  :phone
+  :phone, :fogot_password_token, :fogot_password_created_at
 
 
   has_secure_password
@@ -51,5 +51,9 @@ class Wine100::User < ActiveRecord::Base
     else
       false
     end
+  end
+
+  def reset_password_token_expire?
+    (fogot_password_created_at + 7.days) < Time.now
   end
 end

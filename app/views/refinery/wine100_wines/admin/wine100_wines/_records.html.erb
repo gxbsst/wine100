@@ -3,6 +3,7 @@
 <% if searching? %>
   <h2><%= t('results_for', :scope => 'refinery.admin.search', :query => params[:search]) %></h2>
 <% end %>
+<% @wine100_wines = @wine100_wines.online %>
 <div class='pagination_container'>
   <% if @wine100_wines.any? %>
     <%= render 'wine100_wines' %>

@@ -3,8 +3,10 @@
 xlsx_package = Axlsx::Package.new
 xlsx_package.use_shared_strings = true
 wb = xlsx_package.workbook
+wrap_text = wb.styles.add_style({:alignment => {:horizontal => :center, :vertical => :center, :wrap_text => true}}  )
+
 wb.add_worksheet(name: 'all_wines') do |sheet|
-  sheet.add_row @titles
+  sheet.add_row @titles, :style => wrap_text
   sheet.styles.add_style :color => "#00FF00"
   title = sheet.styles.add_style(
       :fg_color=>"#CCCCCCCC",
@@ -12,24 +14,52 @@ wb.add_worksheet(name: 'all_wines') do |sheet|
       :alignment=>{:horizontal => :left, :wrap_text => true, :vertical => :center },
       :border=> {:style => :thin, :color => "CCCCCCCC"})
   @wines.each do |r|
-    is_oak = r.is_oak? ? '橡木桶陈酿' : '不是橡木桶陈酿'
-    varieties = r.varieties.map {|i| ["#{i.name_en} - #{i.percentage}"] }
-    varieties.compact!
-    v = if varieties.present?
-          varieties.join("\n")
-        else
-          ""
-        end
+    is_oak = r.is_oak? ? '是' : '不是'
+    row_data = [
+      r.id, 
+      r.name_zh, 
+      r.name_en , 
+      r.style , 
+      r.region_1, 
+      r.region_2, 
+      r.region_3, 
+      r.winery_zh, 
+      r.winery_en, 
+      r.level, 
+      r.vintage,
+      r.alcoholicity,
+      r.sweetness,
+      is_oak,
+      r.market_price.try(:to_s),
+      r.prize_history, 
+      r.barcode
+    ]
 
-    sales = r.sale_chanels.map {|i| ["#{i.chanel} - #{i.price}"] }
-    sales.compact!
-    s = if sales.present?
-           sales.join("\n")
-        else
-          ""
-        end
+    varieties = []
+    if r.varieties.present?
+      varieties = r.varieties.map {|i| [i.name_en, i.percentage]}
+    end
+    row_data << varieties
 
-    row_data = [r.company_name, r.name, r.region , r.style , r.vintage, r.alcoholicity, r.winery_name, r.level, r.sweetness, is_oak, r.prize_history, v,  s]
+    row_data.flatten!
+
+    # varieties = r.varieties.map {|i| ["#{i.name_en} - #{i.percentage}"] }
+    # varieties.compact!
+    # v = if varieties.present?
+    #       varieties.join("\n")
+    #     else
+    #       ""
+    #     end
+
+    # sales = r.sale_chanels.map {|i| ["#{i.chanel} - #{i.price}"] }
+    # sales.compact!
+    # s = if sales.present?
+    #        sales.join("\n")
+    #     else
+    #       ""
+    #     end
+
+   
     sheet.add_row row_data, :height => 30, :style =>  title
     #Axlsx::STYLE_THIN_BORDER
   end

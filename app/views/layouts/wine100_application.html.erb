@@ -46,7 +46,44 @@
         </a>
       </h1>
       <div class="nav-collapse collapse">
+      <p class="navbar-text pull-right">
+
+        <% 
+          select = I18n.locale 
+          if select == :en
+            @selected = wine100_languages_path(:locale => :en)
+          else
+            @selected = wine100_languages_path(:locale => :'zh-CN')
+          end
+        %>
+
+
+
+        <%= select_tag "lang", options_for_select( [["中文", wine100_languages_path(:locale => :'zh-CN')], ["EN",  wine100_languages_path(:locale => :en)]], [@selected]) %>
+
+        <script>
+            $(function(){
+              // bind change event to select
+              $('#lang').bind('change', function () {
+                  var url = $(this).val(); // get selected value
+                  if (url) { // require a URL
+                      window.location = url; // redirect
+                  }
+                  return false;
+              });
+            });
+        </script>
+
+        <style>
+          #lang {
+            width: 70px;
+            margin-left: 10px;
+          }
+        </style>
+
+      </p>
         <p class="navbar-text pull-right">
+
           <% if current_user %>
               您好， <a href="/wine100/wines?status=on" class="navbar-link"><%= current_user.email %></a>
               <%= link_to '登出', wine100_session_path(current_user), :method => :delete %>

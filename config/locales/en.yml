@@ -1,5 +1,94 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+zh-CN:
+  login: Log In
+  registrations: Sign Up
+  email: Email
+  password: Password
+  confirm-password: Confirm Password
+  enter-your-password: Enter Your Password
+  wine100_challenge_wine_entry: WINE100 Challenge Wine Entry 
+  how_to_enter: How To Enter?
+  complete_company_information: Complete Company's Information
+  input_the_information_wine: Input The Information Wine
+  check_the_information: Check The Information
+  complete_entry: Complete Entry
+  hi: Hi,
+  login_out: Login Out
+  forget_your_password: Forget your password?
+  please_input_your_email: Please input your email
+  confirm_the_password: confirm the password
+  register_completed: 'Register completed, please complete the detail contact information'
+  setting: Setting
+  company_information: Company information
+  contact_information: Contact information
+  invoice_information: Invoice information
+  operation: Operation
+  draft_box: Draft Box
+  entry_wine_list: Entry Wine List
+  input_the_competing_wine: input the competing wine
+  company_name: Company name 
+  company_address: Company address
+  nation_code: Nation Code+Area Code
+  phone_number: Phone Number
+  website: Website（Optional）
+  how_many_sku_portfolio: How many SKU in your portfolio? (optional)
+  how_many_sku_sale: How many SKU are available for sale?
+  complete_the_contact_information: To complete the contact information
+  please_fill_this: Please fill this.
+  main_contact: Main contact for WINE100 Challenge
+  name: Name
+  position: Position
+  telephone: Telephone
+  complete_invoice_information: To complete the Invoice information
+  invoice_title: Invoice title
+  tax_num: 税务登记号
+  mailing_address: Mailing address for the Invoice
+  main_contacts: Main Contacts for the Invoice
+  complete_registration_information: To complete the registration information
+  upload_wine: Upload the competing wine
+  chinese_name: Chinese name
+  english_name: English name
+  vintage: Vintage
+  country: country
+  region: region
+  sub_region: sub-region (optional)
+  type:  type
+  alcohol: alcohol
+  grape_variety: Grape variety
+  if_more_than: 'If more than one grape variety is used, please click on the "add grape varieties".'
+  add_the_grape_varieties: Add the grape varieties
+  retail_price: Retail price
+  picture: Picture
+  browse: browse
+  maximum_images: Maximum 5MB of PNG, JPG, GIF images.
+  following_optional: The following information are optional
+  add_sales_channels: Add Sales Channels
+  delete: delete
+  sales_channels: Sales channels
+  winery_name_zh: Winery name (Chinese)
+  winery_name_en: Winery name (English)
+  aoc: Classification: (such as DOC, AOC)
+  awards: Awards
+  confirm: Confirm 
+  reset: Reset 
+  entry_wine_list: Entry Wine List
+  continue_to_add_the_entries: Continue to add the entries
+  confirm_the_entry: Confirm the entry 
+  after_complete: 'After complete entry wine information, please click "Complete entry"'
+  wine_information: Wine's information
+  operation: Operation
+  edit: edit
+  delete: delete
+  enter_the_competition: Enter the competition
+  information: information
+  all_infomartion_completed: 'All infomartion completed! Entry wines will be sumbitted to WINE100. Please double confirm, no more modification after clicking "confirm".'
+  cancel: Cancel
+  all_information_was_sumbitted: All information was sumbitted to WINE100!
+  change_the_password: change the password
+  new_password: new password
+  confirm_the_password: confirm the password
+  save: Save
 
-en:
-  hello: "Hello world"
+
+
+
+

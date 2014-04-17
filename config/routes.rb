@@ -1,6 +1,8 @@
 Wine100::Application.routes.draw do
 
   namespace :wine100 do 
+
+    resources :languages, only: [:index]
     resources :sessions
     resources :registrations
     resources :wine100

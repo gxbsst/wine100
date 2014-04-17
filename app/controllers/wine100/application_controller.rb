@@ -12,7 +12,15 @@ module Wine100
     private
 
     def set_locale
-      I18n.locale = params[:locale] || I18n.default_locale
+
+      locale = I18n.default_locale
+
+       if request.cookies.include?('locale')
+         locale = cookies[:locale].to_s
+       end
+
+       I18n.locale = locale 
+      # I18n.locale = params[:locale] || I18n.default_locale
     end
 
     def current_user

@@ -1,6 +1,6 @@
 <p class="fields">
-  <%= f.text_field :name_en, :placeholder => '葡萄品种', :class => 'span4', :required => true %>
-  <%= f.text_field :percentage, :placeholder => '百分比(选填)', :class => 'span2' %> 
+  <%= f.text_field :name_en, :placeholder => t('grape_variety'), :class => 'span4', :required => true %>
+  <%= f.text_field :percentage, :placeholder => "#{t('percentage')}(#{t('optional')})", :class => 'span2' %> 
   <span class="add-on"><i >%</i></span>
-  <%= link_to_remove_fields "删除", f %>
+  <%= link_to_remove_fields t('delete'), f %>
 </p>

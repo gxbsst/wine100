@@ -9,13 +9,13 @@
 
 		<div class="page-header">
 			<h2>
-				参赛酒列表
+				<%= t('entry_wine_list') %>
 				<% if current_user.wines.present? %>
 				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#comfirm-complete">
-				  确认参赛 》
+				  <%= t('confirm_the_entry') %> 》 
 
 				</button>
-				<span class="label label-warning"> 完成参赛酒信息录入后请点击完成录入 </span>
+				<span class="label label-warning">  <%= t('after_complete' ) %> </span>
 				<% end %>
 			</h2>
 		</div>
@@ -25,14 +25,14 @@
 		    <div class="modal-content">
 		      <div class="modal-header">
 		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title">信息</h4>
+		        <h4 class="modal-title"><%= t('information') %></h4>
 		      </div>
 		      <div class="modal-body">
-		        <p>参赛酒录入完成，以录入的葡萄酒将作为参赛酒提交到WINE100，点击确认后所有信息将不能再做修改。</p>
+		        <p><%= t('all_infomartion_completed') %></p>
 		      </div>
 		      <div class="modal-footer">
-		      	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-		      	<%= link_to '确定', complete_wine_wine100_wines_path, :class => 'btn btn-primary' %>
+		      	<button type="button" class="btn btn-default" data-dismiss="modal"><%= t('cancel') %></button>
+		      	<%= link_to t('confirm'), complete_wine_wine100_wines_path, :class => 'btn btn-primary' %>
 		      </div>
 
 		    </div><!-- /.modal-content -->
@@ -40,7 +40,7 @@
 		</div><!-- /.modal -->
 
 		<div class="pull-right">
-			<%= link_to "继续录入参赛酒", new_wine100_wine_path, :class => 'btn btn-success' %>
+			<%= link_to t('continue_to_add_the_entries'), new_wine100_wine_path, :class => 'btn btn-success' %>
 		</div>
 		
 		<div class="clearfix"></div>
@@ -49,9 +49,9 @@
 		<table class="table table-condensed winelist">
 			<thead>
 				<tr>
-					<th>图片</th>
-					<th>酒信息</th>
-					<th>操作</th>
+					<th><%= t('picture') %></th>
+					<th><%= t('wine_information') %></th>
+					<th><%= t('operation') %></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -71,20 +71,20 @@
 					</td>
 					<td>
 
-					<strong>酒名：</strong><%= wine.name %> <br />
-					<strong>葡萄品种-百分比:</strong><br>
+					<strong><%= t('wine_name') %>：</strong><%= wine.name %> <br />
+					<strong><%= t('grape_variety') %>-<%= t('percentage') %>:</strong><br>
 					<%= raw wine.varieties_text %> <br />
-					<strong>酒类型: </strong><%= wine.style %><br>
-					<strong>产区: </strong><%= wine.region %><br>
+					<strong><%= t('type') %>: </strong><%= wine.style %><br>
+					<strong><%= t('region') %>: </strong><%= wine.region %><br>
 					</td>
 					
 					<td>
 					
 					  <% if !wine.status %>
-						<%= link_to '编辑', edit_wine100_wine_path(wine, :step => 1) %>
+						<%= link_to t('edit'), edit_wine100_wine_path(wine, :step => 1) %>
 						&nbsp;
 						&nbsp;
-						<%= link_to '删除', wine100_wine_path(wine), :method => :delete %>
+						<%= link_to t('delete'), wine100_wine_path(wine), :method => :delete %>
 						&nbsp;
 						&nbsp;
 						<% end %>
@@ -92,7 +92,7 @@
 						<% if wine.status %>
 						<span class="label label-success">已参赛</span>
 						<% else %>
-						 <%= link_to '参赛', one_complete_wine100_wine_path(wine), :confirm => '点击确定后， 该酒信息将不能再做修改。' %>
+						 <%= link_to t('confirm_in'), one_complete_wine100_wine_path(wine), :confirm => '点击确定后， 该酒信息将不能再做修改。' %>
 						<% end %>
 						</td>
 				</tr>
@@ -102,7 +102,7 @@
 			</tbody>
 		</table>
 		<% else %>
-		<p align="center"><%= link_to '上传参赛酒', new_wine100_wine_path, :class => 'btn btn-large btn-primary' %></p>
+		<p align="center"><%= link_to t('upload_wine'), new_wine100_wine_path, :class => 'btn btn-large btn-primary' %></p>
 		<% end %>
 	</div><!--/span-->
 </div>

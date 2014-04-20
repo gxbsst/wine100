@@ -6,7 +6,7 @@
 		
 		<%= form_for @profile, :url => wine100_profiles_path(:for => params[:for]), :class => 'form-signin' do |f| %>
 
-	  <% if params[:for] == 'contact'  %>
+		<% if params[:for] == 'contact'  %>
 		<%= render 'form_contact', :f => f %>
 		<% end %>
 		<% if params[:for] == 'company' %>
@@ -17,11 +17,11 @@
 		<% end %>
 
 		<% if params[:for] == 'contact' %>
-			<button class="btn btn-large btn-primary" type="submit">去完成财务信息 》</button>
+		<button class="btn btn-large btn-primary" type="submit"><%= t('complete_invoice_information') %> 》</button>
 		<% elsif params[:for] == 'company' %>
-			<button class="btn btn-large btn-primary" type="submit">去完成联系信息》</button>
+		<button class="btn btn-large btn-primary" type="submit"><%= t('complete_the_contact_information' %>》</button>
 		<% else %>
-			<button class="btn btn-large btn-primary" type="submit">完成注册信息 》</button>
+		<button class="btn btn-large btn-primary" type="submit"><%= t('complete_registration_information') %> 》</button>
 		<% end %>
 		<% end %>
 

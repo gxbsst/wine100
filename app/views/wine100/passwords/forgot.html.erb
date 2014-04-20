@@ -3,7 +3,7 @@
 	<%= form_for(@user, :url => forgot_wine100_passwords_path) do |f| %>
 
 	<div class="control-group">
-		<%= f.label :email, "邮箱: " %>
+		<%= f.label :email, "#{t('email')}: " %>
 		<div class="controls">
 			<%= f.email_field :email, :placeholder => '请输入您的注册邮箱', :class => 'block box span6',  :required => true %>
 		</div>

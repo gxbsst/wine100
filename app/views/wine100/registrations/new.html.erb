@@ -1,14 +1,14 @@
 
 <div class="row-fluid marketing">
   <div class="span6">
-    <h3>登录</h3>
+    <h3><%= t('login') %></h3>
     <%= form_for @user, :url => wine100_sessions_path, :class => 'form-signin' do |f| %>
     <%= render 'wine100/sessions/form', :f => f %>
     <% end -%>
   </div>
 
   <div class="span6">
-    <h3>注册</h3>
+    <h3><%= t("registrations")%></h3>
 
     <%= form_for @user, :url => wine100_registrations_path, :class => 'form-signin' do |f| %>
     <%= render 'form', :f => f %>

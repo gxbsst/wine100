@@ -10,34 +10,34 @@
 <table class="table wine-form-2" cellpadding="0" cellspacing="0">
   <tr class="tr_1">
     <td class="td_1">
-      <%= f.label :name_zh, "中文名: " %>
+      <%= f.label :name_zh, "#{t('chinese_name')}: " %>
     </td>
     <td class="td_2" colspan="3">
       <div class="control-group">
         <div class="controls">
-          <%= f.text_field :name_zh, :placeholder => '中文名',  :class => 'span5', :required => true %>
+          <%= f.text_field :name_zh, :placeholder => t('chinese_name'),  :class => 'span5', :required => true %>
         </div>
       </div>
     </td>
   </tr>
   <tr>
     <td class="td_1">
-      <%= f.label :name_en, "英文名: " %>
+      <%= f.label :name_en, "#{t('english_name')}: " %>
     </td>
     <td class="td_2">
       <div class="control-group">
         <div class="controls">
-          <%= f.text_field :name_en, :placeholder => '英文名', :class => 'span11', :required => true %>
+          <%= f.text_field :name_en, :placeholder => t('english_name'), :class => 'span11', :required => true %>
         </div>
       </div>
     </td>
     <td class="td_3">
-      <%= f.label :vintage, "年份: " %>
+      <%= f.label :vintage, "#{t('vintage')}: " %>
     </td>
     <td class="td_4">
       <div class="control-group">
         <div class="controls">
-          <%= f.text_field :vintage, :placeholder => '年份', :class => 'span2', :required => true %>
+          <%= f.text_field :vintage, :placeholder => t('vintage'), :class => 'span2', :required => true %>
         </div>
       </div>
     </td>
@@ -47,32 +47,32 @@
 <table class="table wine-form-3">
   <tr class="tr_1">
     <td class="td_1">
-      <%= f.label :region_1, "国家: " %>
+      <%= f.label :region_1, "#{t('country')}: " %>
     </td>
     <td class="td_2">
       <div class="control-group">
         <div class="controls">
-         <%= f.text_field :region_1, :placeholder => '国家', :class => 'span12', :required => true %>
+         <%= f.text_field :region_1, :placeholder => t('country'), :class => 'span12', :required => true %>
        </div>
      </div>
     </td>
    <td class="td_5">
-    <%= f.label :region_2, "产区: " %>
+    <%= f.label :region_2, "#{t('region')}: " %>
   </td>
   <td class="td_6">
     <div class="control-group">
       <div class="controls">
-       <%= f.text_field :region_2, :placeholder => '产区', :class => 'span12',:required => true %>
+       <%= f.text_field :region_2, :placeholder => t('region'), :class => 'span12',:required => true %>
      </div>
    </div>
  </td>
  <td class="td_7">
-   <%= f.label :region_3, "子产区: " %>
+   <%= f.label :region_3, "#{t('sub_region_0')}: " %>
  </td>
  <td class="td_8">
   <div class="control-group">
     <div class="controls">
-     <%= f.text_field :region_3, :placeholder => '子产区（选填)', :class => 'span12' %> 
+     <%= f.text_field :region_3, :placeholder => t('sub_region'), :class => 'span12' %> 
    </div>
  </div>
 </td>
@@ -82,25 +82,25 @@
 <table id="wine-form" class="table wine-form">
   <tr class="tr_1">
     <td class="td_1">
-      <%= f.label :style, "类型: " %>
+      <%= f.label :style, "#{t('type')}: " %>
     </td>
     <td class="td_2">
       <div class="control-group">
         <div class="controls">
-          <%= f.select :style, APP['wines']['styles'].each{|value| [value, value]}, :required => true, :prompt => '葡萄酒类型' %>
+          <%= f.select :style, APP['wines']['styles'].each{|value| [value, value]}, :required => true, :prompt => t('type') %>
         </div>
       </div>
     </td>
 
     <td class="td_3">
-      <%= f.label :alcoholicity, "酒精度: " %>
+      <%= f.label :alcoholicity, "#{t('alcohol')}: " %>
     </td>
     <td class="td_4">
       <div class="control-group">
         <div class="controls">
           <div class="input-prepend">
            <!-- <span class="add-on"><i class="icon">%</i></span> -->
-           <%= f.text_field :alcoholicity, :placeholder => '酒精度比如12.5', :class => 'span12', :required => true %>
+           <%= f.text_field :alcoholicity, :placeholder => "#{t('alcohol_0')}", :class => 'span12', :required => true %>
            <span style="background: none; border: 0" class="add-on">%Vol</i></span>
          </div>
        </div>
@@ -112,7 +112,7 @@
 <table class="table wine-form-5">
   <tr class="tr_1">
     <td class="td_1" valign="top">
-      <%= f.label :varieties, "葡萄品种: " %>
+      <%= f.label :varieties, "#{t('grape_variety')}: " %>
     </td>
     <td class="td_2">
       <div class="control-group">
@@ -125,9 +125,9 @@
         </div>
         <div class="alert">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          如果多于一个葡萄品种请点击"添加葡萄品种".
+          <%= t('if_more_than') %>
         </div>
-        <p><%= link_to_add_fields "添加葡萄品种", f, :varieties, '.variety_outer' %></p>
+        <p><%= link_to_add_fields t('add_the_grape_varieties'), f, :varieties, '.variety_outer' %></p>
         <br>
       </div>
     </div>
@@ -140,13 +140,13 @@
 <table class="table wine-form-4">
   <tr>
     <td class="td_1">
-      <%= f.label :market_price, "零售价: " %>
+      <%= f.label :market_price, "#{t('retail_price')}: " %>
     </td>
     <td class="td_2">
       <div class="control-group">
         <div class="controls">
           <%= f.text_field :market_price, :placeholder => '', :class => 'span2' %>
-          <i class="icon">元</i>
+          <i class="icon"><%= t('yuan') %></i>
         </div>
       </div>
     </td>
@@ -188,7 +188,7 @@
         <%= f.file_field :photo, :onchange => 'PreviewImage()' %>
         <div class="alert">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
-          最大可传5MB的PNG、JPG、GIF图片.
+          <%= t('maximum_images') %>
         </div>
       </td>
     </tr>
@@ -199,12 +199,12 @@
 <br>
 
 <div>
-----------------------------------------------------------------------以下为选填--------------------------------------------------------------------------------
+----------------------------------------------------------------------<%= t('following_optional') %>--------------------------------------------------------------------------------
 </div>
 <br> 
 <table class="table wine-form-6">
   <tr class="tr_1">
-    <td class="td_1"> 销售渠道: </td>
+    <td class="td_1"> <%= t('sales_channels') %>: </td>
     <td class="td_2">
      <!-- 
      <div class="controls">
@@ -218,7 +218,7 @@
         <%= render "sale_chanel_fields", :f => v %>
         <% end %>
       </div>
-      <p><%= link_to_add_fields "添加销售渠道", f, :sale_chanels, '.sale_chanel_outer' %></p>
+      <p><%= link_to_add_fields t('add_sales_channels'), f, :sale_chanels, '.sale_chanel_outer' %></p>
     </div>
   </div>
 </td>
@@ -228,20 +228,20 @@
 <table class="table wine-form-7">
   <tr class="t4_1">
     <td class="td_1">
-      <%= f.label :winery_zh, "酒庄名称（中）: " %>
+      <%= f.label :winery_zh, "#{t('winery_name_zh')}: " %>
     </td>
     <td class="td_2">
       <div class="controls">
-        <%= f.text_field :winery_zh, :placeholder => '酒庄名称（中）', :class => 'span12' %>
+        <%= f.text_field :winery_zh, :placeholder => t("winery_name_zh"), :class => 'span12' %>
       </div>
     </td>
 
     <td class="td_3">
-      <%= f.label :winery_en, "酒庄名称(英): " %>
+      <%= f.label :winery_en, "#{t('winery_name_en')}: " %>
     </td>
     <td class="td_4">
       <div class="controls">
-        <%= f.text_field :winery_en, :placeholder => '酒庄名称(英)', :class => 'span12' %>
+        <%= f.text_field :winery_en, :placeholder => t('winery_name_en'), :class => 'span12' %>
       </div>
     </td>
   </tr>
@@ -251,12 +251,12 @@
 
   <tr class="tr_3">
     <td class="td_1">
-      <%= f.label :level, "等级: " %>
+      <%= f.label :level, "#{t('aoc')}: " %>
     </td>
     <td class="td_2">
       <div class="control-group">
         <div class="controls">
-          <%= f.text_field :level, :placeholder => '等级, 如:DOC,AOC', :class => 'block span4' %>
+          <%= f.text_field :level, :placeholder => t('aoc_0'), :class => 'block span4' %>
         </div>
       </div>
     </td>
@@ -264,11 +264,11 @@
 
   <tr class="tr_3"  id="sweetness-outer">
     <td class="td_1">
-      <%= f.label :sweetness, "甜度: " %>
+      <%= f.label :sweetness, "#{t('sweetness')}: " %>
     </td>
     <td class="td_2">
      <div class="controls">
-       <%= f.text_field :sweetness, :placeholder => '甜度', :class => 'block box' %>
+       <%= f.text_field :sweetness, :placeholder => t('sweetness'), :class => 'block box' %>
      </div>
    </td>
  </tr>
@@ -277,28 +277,30 @@
   <td class="td_1">
   </td>
   <td class="td_2">
+  <!--
    <div class="controls">
      <%= f.check_box :is_oak, :checked => true, :class => 'block box' %>
      是否橡木桶陈酿
    </div>
+   -->
  </td>
 </tr>
 
 <tr class="tr_5">
   <td class="td_1">
-    <%= f.label :prize_history, "获奖记录: " %>
+    <%= f.label :prize_history, "#{t('awards')}: " %>
   </td>
   <td class="td_2">
     <div class="controls">
-      <%= f.text_area :prize_history, :placeholder => '获奖记录', :style => 'width: 500px;', :class => 'block box ', :size => '100x6' %>
+      <%= f.text_area :prize_history, :placeholder => t('awards'), :style => 'width: 500px;', :class => 'block box ', :size => '100x6' %>
     </div>
   </td>
 </tr>
 
 </table>
 <div class="button-outer">
-  <button class="btn btn-lg btn-primary" type="submit">确 定</button>
-  <button type="reset" class="btn btn-lg">重 置</button>
+  <button class="btn btn-lg btn-primary" type="submit"><%= t('confirm') %></button>
+  <button type="reset" class="btn btn-lg"><%= t('reset') %></button>
 </div>
 
 

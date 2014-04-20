@@ -1,43 +1,43 @@
 <div class="page-header">
 
-<h2>财务信息</h2>
+<h2><%= t('invoice_information') %></h2>
 </div>
 <div class="control-group">
-<%= f.label :finance_title, "发票抬头:" %>
+<%= f.label :finance_title, "#{t('invoice_title')}:" %>
   <div class="controls">
-    <%= f.text_field :finance_title, :placeholder => '发票抬头', :class => ' span6' %>
+    <%= f.text_field :finance_title, :placeholder => t('invoice_title'), :class => ' span6' %>
 		<span class="red">*</span>
   </div>
 </div>
 
 <div class="control-group">
-<%= f.label :finance_tax_num, "税务登记号:" %>
+<%= f.label :finance_tax_num, "#{t('tax_num')}:" %>
   <div class="controls">
-    <%= f.text_field :finance_tax_num, :placeholder => '税务登记号', :class => ' span6' %>
+    <%= f.text_field :finance_tax_num, :placeholder => t('tax_num'), :class => ' span6' %>
 		<span class="red">*</span>
   </div>
 </div>
 
 <div class="control-group">
-<%= f.label :finance_add, "发票邮寄地址:" %>
+<%= f.label :finance_add, "#{t('mailing_address')}:" %>
   <div class="controls">
-    <%= f.text_field :finance_add, :placeholder => '发票邮寄地址', :class => ' span6' %>
+    <%= f.text_field :finance_add, :placeholder => t('mailing_address'), :class => ' span6' %>
 		<span class="red">*</span>
   </div>
 </div>
 
 <div class="control-group">
-<%= f.label :finance_name, "财务联系人:" %>
+<%= f.label :finance_name, "#{t('main_contacts')}:" %>
   <div class="controls">
-    <%= f.text_field :finance_name, :placeholder => '财务联系人', :class => ' span6' %>
+    <%= f.text_field :finance_name, :placeholder => t('main_contacts'), :class => ' span6' %>
 		<span class="red">*</span>
   </div>
 </div>
 
 <div class="control-group">
-<%= f.label :finance_phone, "联系人电话:" %>
+<%= f.label :finance_phone, "#{t('telephone')}:" %>
   <div class="controls">
-    <%= f.text_field :finance_phone, :placeholder => '联系人电话', :class => 'span6' %>
+    <%= f.text_field :finance_phone, :placeholder => t('telephone'), :class => 'span6' %>
 		<span class="red">*</span>
   </div>
 </div>

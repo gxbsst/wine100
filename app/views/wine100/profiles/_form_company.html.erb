@@ -3,9 +3,9 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :company_name_zh, "公司名称:" %>
+  <%= f.label :company_name_zh, "#{t('company_name')}:" %>
   <div class="controls">
-    <%= f.text_field :company_name_zh, :placeholder => '公司名称', :class => 'span6', :required => true %>
+    <%= f.text_field :company_name_zh, :placeholder => t('company_name'), :class => 'span6', :required => true %>
 		<span class="red">*</span>
   </div>
   <!--
@@ -17,34 +17,34 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :company_add, "公司地址:" %>
+  <%= f.label :company_add, "#{t('company_address')}:" %>
   <div class="controls">
-    <%= f.text_field :company_add, :placeholder => '公司地址', :class => 'span6', :required => true %>
+    <%= f.text_field :company_add, :placeholder => t('company_address'), :class => 'span6', :required => true %>
 		<span class="red">*</span>
   </div>
 </div>
 
 
 <div class="control-group">
-  <%= f.label :company_phone, "公司电话:" %>
+  <%= f.label :company_phone, "#{t('phone_number')}:" %>
   <div class="controls">
     <%= f.text_field :company_phone_area_code, :placeholder => '区号', :class => 'span1', :required => false %>
-    <%= f.text_field :company_phone, :placeholder => '公司电话', :class => 'span6', :required => true %>
+    <%= f.text_field :company_phone, :placeholder => t('phone_number'), :class => 'span6', :required => true %>
 		<span class="red">*</span>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :company_website, "公司网址(选填):" %>
+  <%= f.label :company_website, "#{t('website')}:" %>
   <div class="controls">
      <span class="add-on">http://</span>
-    <%= f.text_field :company_website, :placeholder => '公司网址', :class => 'span6', :required => false %>
+    <%= f.text_field :company_website, :placeholder => t('website'), :class => 'span6', :required => false %>
   </div>
 </div>
 
 <div class="control-group">
- <%= f.label :company_wines_count, "您目前的产品线里一共拥有多少款葡萄酒？(选填):" %>
+ <%= f.label :company_wines_count, t('how_many_sku_portfolio') %>
   <div class="controls">
-    <%= f.text_field :company_wines_count, :placeholder => '可销售葡萄酒款数', :class => 'span6' %>
+    <%= f.text_field :company_wines_count, :placeholder => t('how_many_sku_sale'), :class => 'span6' %>
   </div>		
 </div>

@@ -2,100 +2,100 @@
 <div class="span3">
   <div class="well sidebar-nav">
     <ul class="nav nav-list">
-      <li class="nav-header">设置</li>
+      <li class="nav-header"><%= t('setting') %></li>
       <% if !@profile.new_record? %>
 
       <% if (controller_name == 'profiles' && action_name == 'edit' && params[:for] == 'company') %>
       <li class="active">
-        <%= link_to "公司信息", edit_wine100_profile_path(@profile, :for => :company) %>
+        <%= link_to t("company_information"), edit_wine100_profile_path(@profile, :for => :company) %>
       </li>
       <% else %>
       <li>
-        <%= link_to "公司信息", edit_wine100_profile_path(@profile, :for => :company) %>
+        <%= link_to t("company_information"), edit_wine100_profile_path(@profile, :for => :company) %>
       </li>
       <% end %>
 
       <% if (controller_name == 'profiles' && action_name == 'edit' && params[:for] == 'contact') %>
       <li class="active">
-       <%= link_to "联系信息", edit_wine100_profile_path(@profile, :for => :contact) %>
+       <%= link_to t("contact_information"), edit_wine100_profile_path(@profile, :for => :contact) %>
      </li>
       <% else %>
        <li>
-        <%= link_to "联系信息", edit_wine100_profile_path(@profile, :for => :contact) %>
+        <%= link_to t("contact_information"), edit_wine100_profile_path(@profile, :for => :contact) %>
       </li>
       <% end %>
 
       <% if (controller_name == 'profiles' && action_name == 'edit' && params[:for] == 'finance') %>
 
      <li class="active">
-      <%= link_to "财务信息", edit_wine100_profile_path(@profile, :for => :finance) %>
+      <%= link_to t("invoice_information"), edit_wine100_profile_path(@profile, :for => :finance) %>
     </li>
 
     <% else %>
      <li>
-      <%= link_to "财务信息", edit_wine100_profile_path(@profile, :for => :finance) %>
+      <%= link_to t("invoice_information"), edit_wine100_profile_path(@profile, :for => :finance) %>
     </li>
     <% end %>
 
     <% if (controller_name == 'passwords' && action_name == 'edit') %>
-    <li class="active"><%= link_to  '修改密码', edit_wine100_password_path(@user) %></li>
+    <li class="active"><%= link_to  t("change_the_password"), edit_wine100_password_path(@user) %></li>
     <% else %>
-    <li><%= link_to  '修改密码', edit_wine100_password_path(@user) %></li>
+    <li><%= link_to  t("change_the_password"), edit_wine100_password_path(@user) %></li>
     <% end %>
 
     <% else %>
     <% if (controller_name == 'profiles' && action_name == 'new' && params[:for] == 'company') %>
       <li class="active">
-        <%= link_to "公司信息", new_wine100_profile_path(:for => :company) %>
+        <%= link_to t("company_information"), new_wine100_profile_path(:for => :company) %>
       </li>
     <% else %>
       <li>
-        <%= link_to "公司信息", new_wine100_profile_path(:for => :company) %>
+        <%= link_to t("company_information"), new_wine100_profile_path(:for => :company) %>
       </li>
     <% end %>
 
       <li>
-       <%= link_to "联系信息", new_wine100_profile_path(:for => :company) %>
+       <%= link_to t("contact_information"), new_wine100_profile_path(:for => :company) %>
      </li>
      <li>
-     <%= link_to "财务信息", new_wine100_profile_path(:for => :company) %>
+     <%= link_to t("invoice_information"), new_wine100_profile_path(:for => :company) %>
     </li>
 
     <% end %>
-    <li class="nav-header">操作</li>
+    <li class="nav-header"><%= t("operation") %></li>
     <% if (controller_name == 'wines' && action_name == 'index' && params[:status] == 'draft') %>
     <li class="active">
-      <%= link_to "草稿箱", wine100_wines_path(:status => :draft) %>
+      <%= link_to t("draft_box"), wine100_wines_path(:status => :draft) %>
     </li>
     <% else %>
     <li>
-      <%= link_to "草稿箱", wine100_wines_path(:status => :draft) %>
+      <%= link_to t("draft_box"), wine100_wines_path(:status => :draft) %>
     </li>
     <% end %>
 
     <% if (controller_name == 'wines' && action_name == 'index' && params[:status] == 'on') %>
     <li class="active">
-      <%= link_to "参赛酒列表", wine100_wines_path(:status => :on) %>
+      <%= link_to t("entry_wine_list"), wine100_wines_path(:status => :on) %>
     </li>
     <% else %>
     <li>
-      <%= link_to "参赛酒列表", wine100_wines_path(:status => :on) %>
+      <%= link_to t("entry_wine_list"), wine100_wines_path(:status => :on) %>
     </li>
     <% end %>
     <% if (controller_name == 'wines' && action_name == 'new')  %>
     <li class="active">
-      <%= link_to "录入参赛酒", new_wine100_wine_path() %>
+      <%= link_to t("input_the_information_wine"), new_wine100_wine_path() %>
     </li>
     <% else %>
     <li>
-      <%= link_to "录入参赛酒", new_wine100_wine_path() %>
+      <%= link_to t("input_the_information_wine"), new_wine100_wine_path() %>
     </li>
     <% end %>
    
   </ul>
 <br>
 <br>
- <p style="text-align:center;"> <%= link_to "参赛流程", wine100_accounts_path, :class => "btn btn-success  btn-lg" %> </p>
+ <p style="text-align:center;"> <%= link_to t("how_to_enter"), wine100_accounts_path, :class => "btn btn-success  btn-lg" %> </p>
 
 
   

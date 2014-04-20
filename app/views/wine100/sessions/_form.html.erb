@@ -1,15 +1,15 @@
   <div class="control-group">
   	<div class="controls">
-  		<%= f.email_field :email, :placeholder => '邮箱', :class => 'block box span6', :required => true %>
+  		<%= f.email_field :email, :placeholder => t('email'), :class => 'block box span6', :required => true %>
   	</div>
   </div>
 
   <div class="control-group">
   	<div class="controls">
-  		<%= f.password_field :password, :placeholder => '密码', :class => 'block box span6',  :required => true %>
+  		<%= f.password_field :password, :placeholder => t('password'), :class => 'block box span6',  :required => true %>
   	</div>
 
   </div>
-  <button class="btn btn-large btn-primary" type="submit">登录</button>
+  <button class="btn btn-large btn-primary" type="submit"><%= t('login') %></button>
 
-  <%= link_to "忘记密码?", forgot_wine100_passwords_path %>
+  <%= link_to t('forget_your_password'), forgot_wine100_passwords_path %>

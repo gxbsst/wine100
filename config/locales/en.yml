@@ -1,4 +1,4 @@
-zh-CN:
+en:
   login: Log In
   registrations: Sign Up
   email: Email
@@ -44,15 +44,18 @@ zh-CN:
   mailing_address: Mailing address for the Invoice
   main_contacts: Main Contacts for the Invoice
   complete_registration_information: To complete the registration information
+  complete_registration: Complete Registration
   upload_wine: Upload the competing wine
   chinese_name: Chinese name
   english_name: English name
   vintage: Vintage
   country: country
   region: region
+  sub_region_0: sub-region
   sub_region: sub-region (optional)
   type:  type
   alcohol: alcohol
+  alcohol_0: alcohol e.g 12.5
   grape_variety: Grape variety
   if_more_than: 'If more than one grape variety is used, please click on the "add grape varieties".'
   add_the_grape_varieties: Add the grape varieties
@@ -66,7 +69,8 @@ zh-CN:
   sales_channels: Sales channels
   winery_name_zh: Winery name (Chinese)
   winery_name_en: Winery name (English)
-  aoc: Classification: (such as DOC, AOC)
+  aoc: Classification
+  aoc_0: 'Classification: (such as DOC, AOC)'
   awards: Awards
   confirm: Confirm 
   reset: Reset 
@@ -87,7 +91,11 @@ zh-CN:
   new_password: new password
   confirm_the_password: confirm the password
   save: Save
-
+  yuan: Yuan
+  sweetness: Sweetness
+  optional: Optional
+  wine_name: Name
+  confirm_in: Confirm
 
 
 

@@ -2,14 +2,14 @@
 	<%= render 'wine100/accounts/sidebar' %>
 	<div class="span9">
 	  <div class="page-header">
-	  	<h2>修改密码</h2>
+	  	<h2><%= t('change_the_password') %></h2>
 		</div>
 
 		<%= form_for @user, :url => wine100_password_path(@user), :class => 'form-signin' do |f| %>
 
 		<%= render 'form', :f => f %>
 	
-		<button class="btn btn-large btn-primary" type="submit">更新密码</button>
+		<button class="btn btn-large btn-primary" type="submit"><%= t('save') %></button>
 		<% end %>
 
 	</div><!--/span-->

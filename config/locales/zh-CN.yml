@@ -96,6 +96,10 @@ zh-CN:
   optional: 选填
   wine_name: 酒名
   confirm_in: 参赛
+  already_enter_the_challenge: 已参赛
+  the_information_can_not: 点击确定后， 该酒信息将不能再做修改。
+  enter_your_email: 请输入您的注册邮箱。
+  find_password: 找回密码
 
 
 

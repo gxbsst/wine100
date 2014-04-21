@@ -96,6 +96,10 @@ en:
   optional: Optional
   wine_name: Name
   confirm_in: Confirm
+  already_enter_the_challenge: Already enter the challenge
+  the_information_can_not: The information can not be change after click YES.
+  enter_your_email: Please enter your email address.
+  find_password: Find Password
 
 
 

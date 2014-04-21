@@ -5,11 +5,11 @@
 	<div class="control-group">
 		<%= f.label :email, "#{t('email')}: " %>
 		<div class="controls">
-			<%= f.email_field :email, :placeholder => '请输入您的注册邮箱', :class => 'block box span6',  :required => true %>
+			<%= f.email_field :email, :placeholder => t('enter_your_email'), :class => 'block box span6',  :required => true %>
 		</div>
 	</div>
 
-	<%= f.submit "找回密码",  :class => 'btn btn-large btn-primary' %>
+	<%= f.submit t('find_password'),  :class => 'btn btn-large btn-primary' %>
 	<% end %>
 	
 </div>

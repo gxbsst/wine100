@@ -1,0 +1,123 @@
+<% content_for :body_content_title do %>
+  <%= @wine100_profile.company_name_en %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Company Name En</h1>
+    <p>
+      <%=raw @wine100_profile.company_name_en %>
+    </p>
+  </section>
+  <section>
+    <h1>Company Name Zh</h1>
+    <p>
+      <%=raw @wine100_profile.company_name_zh %>
+    </p>
+  </section>
+  <section>
+    <h1>Company Add</h1>
+    <p>
+      <%=raw @wine100_profile.company_add %>
+    </p>
+  </section>
+  <section>
+    <h1>Company Phone</h1>
+    <p>
+      <%=raw @wine100_profile.company_phone %>
+    </p>
+  </section>
+  <section>
+    <h1>Company Website</h1>
+    <p>
+      <%=raw @wine100_profile.company_website %>
+    </p>
+  </section>
+  <section>
+    <h1>Company Wines Count</h1>
+    <p>
+      <%=raw @wine100_profile.company_wines_count %>
+    </p>
+  </section>
+  <section>
+    <h1>Company Phone Area Code</h1>
+    <p>
+      <%=raw @wine100_profile.company_phone_area_code %>
+    </p>
+  </section>
+  <section>
+    <h1>Contact Name</h1>
+    <p>
+      <%=raw @wine100_profile.contact_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Contact Job</h1>
+    <p>
+      <%=raw @wine100_profile.contact_job %>
+    </p>
+  </section>
+  <section>
+    <h1>Contact Phone</h1>
+    <p>
+      <%=raw @wine100_profile.contact_phone %>
+    </p>
+  </section>
+  <section>
+    <h1>Contact Email</h1>
+    <p>
+      <%=raw @wine100_profile.contact_email %>
+    </p>
+  </section>
+  <section>
+    <h1>Finance Title</h1>
+    <p>
+      <%=raw @wine100_profile.finance_title %>
+    </p>
+  </section>
+  <section>
+    <h1>Finance Tax Num</h1>
+    <p>
+      <%=raw @wine100_profile.finance_tax_num %>
+    </p>
+  </section>
+  <section>
+    <h1>Finance Add</h1>
+    <p>
+      <%=raw @wine100_profile.finance_add %>
+    </p>
+  </section>
+  <section>
+    <h1>Finance Name</h1>
+    <p>
+      <%=raw @wine100_profile.finance_name %>
+    </p>
+  </section>
+  <section>
+    <h1>Finance Phone</h1>
+    <p>
+      <%=raw @wine100_profile.finance_phone %>
+    </p>
+  </section>
+  <section>
+    <h1>Wine100 User</h1>
+    <p>
+      <%=raw @wine100_profile.wine100_user_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="wine100_profiles">
+      <% @wine100_profiles.each do |wine100_profile| %>
+        <li>
+          <%= link_to wine100_profile.company_name_en, refinery.wine100_profiles_wine100_profile_path(wine100_profile) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

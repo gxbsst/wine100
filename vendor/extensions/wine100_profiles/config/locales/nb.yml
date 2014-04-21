@@ -1,0 +1,43 @@
+nb:
+  refinery:
+    plugins:
+      wine100_profiles:
+        title: Wine100 Profiles
+    wine100_profiles:
+      admin:
+        wine100_profiles:
+          actions:
+            create_new: Lag en ny Wine100 Profile
+            reorder: Endre rekkefølgen på Wine100 Profiles
+            reorder_done: Ferdig å endre rekkefølgen Wine100 Profiles
+          records:
+            title: Wine100 Profiles
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Wine100 Profiles enda. Klikk på "Lag en ny Wine100 Profile" for å legge til din første wine100 profile.
+          wine100_profile:
+            view_live_html: Vis hvordan denne wine100 profile ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne wine100 profile
+            delete: Fjern denne wine100 profile permanent
+      wine100_profiles:
+        show:
+          other: Andre Wine100 Profiles
+  activerecord:
+    attributes:
+      'refinery/wine100_profiles/wine100_profile':
+        company_name_en: Company Name En
+        company_name_zh: Company Name Zh
+        company_add: Company Add
+        company_phone: Company Phone
+        company_website: Company Website
+        company_wines_count: Company Wines Count
+        company_phone_area_code: Company Phone Area Code
+        contact_name: Contact Name
+        contact_job: Contact Job
+        contact_phone: Contact Phone
+        contact_email: Contact Email
+        finance_title: Finance Title
+        finance_tax_num: Finance Tax Num
+        finance_add: Finance Add
+        finance_name: Finance Name
+        finance_phone: Finance Phone
+        wine100_user_id: Wine100 User

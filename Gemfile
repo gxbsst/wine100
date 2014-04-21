@@ -82,3 +82,5 @@ gem 'memcache-client'
 gem 'mini_magick'
 
 gem 'refinerycms-wine100_wines', :path => 'vendor/extensions'
+
+gem 'refinerycms-wine100_profiles', :path => 'vendor/extensions'

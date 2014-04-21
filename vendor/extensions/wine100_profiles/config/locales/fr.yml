@@ -1,0 +1,43 @@
+fr:
+  refinery:
+    plugins:
+      wine100_profiles:
+        title: Wine100 Profiles
+    wine100_profiles:
+      admin:
+        wine100_profiles:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Wine100 Profile
+            reorder: Réordonner les Wine100 Profiles
+            reorder_done: Fin de réordonnancement des Wine100 Profiles
+          records:
+            title: Wine100 Profiles
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Wine100 Profile. Cliquer sur "Créer un(e) nouve(au/l/lle) Wine100 Profile" pour créer votre premi(er/ère) wine100 profile.'
+          wine100_profile:
+            view_live_html: Voir ce(t/tte) wine100 profile <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) wine100 profile
+            delete: Supprimer définitivement ce(t/tte) wine100 profile
+      wine100_profiles:
+        show:
+          other: Autres Wine100 Profiles
+  activerecord:
+    attributes:
+      'refinery/wine100_profiles/wine100_profile':
+        company_name_en: Company Name En
+        company_name_zh: Company Name Zh
+        company_add: Company Add
+        company_phone: Company Phone
+        company_website: Company Website
+        company_wines_count: Company Wines Count
+        company_phone_area_code: Company Phone Area Code
+        contact_name: Contact Name
+        contact_job: Contact Job
+        contact_phone: Contact Phone
+        contact_email: Contact Email
+        finance_title: Finance Title
+        finance_tax_num: Finance Tax Num
+        finance_add: Finance Add
+        finance_name: Finance Name
+        finance_phone: Finance Phone
+        wine100_user_id: Wine100 User

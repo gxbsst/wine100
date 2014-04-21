@@ -97,4 +97,7 @@ module ApplicationHelper
     "/refinery/wine100_wines/export_all"
   end
 
+  def export_all_users_path
+    "/refinery/wine100_profiles/export_all"
+  end
 end

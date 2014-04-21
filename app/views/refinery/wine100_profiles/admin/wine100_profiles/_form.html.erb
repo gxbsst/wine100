@@ -1,0 +1,113 @@
+<%= form_for [refinery, :wine100_profiles_admin, @wine100_profile] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @wine100_profile,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :company_name_en -%>
+    <%= f.text_field :company_name_en, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :company_name_zh -%>
+    <%= f.text_field :company_name_zh  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :company_add -%>
+    <%= f.text_field :company_add  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :company_phone -%>
+    <%= f.text_field :company_phone  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :company_website -%>
+    <%= f.text_field :company_website  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :company_wines_count -%>
+    <%= f.text_field :company_wines_count  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :company_phone_area_code -%>
+    <%= f.text_field :company_phone_area_code  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :contact_name -%>
+    <%= f.text_field :contact_name  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :contact_job -%>
+    <%= f.text_field :contact_job  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :contact_phone -%>
+    <%= f.text_field :contact_phone  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :contact_email -%>
+    <%= f.text_field :contact_email  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :finance_title -%>
+    <%= f.text_field :finance_title  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :finance_tax_num -%>
+    <%= f.text_field :finance_tax_num  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :finance_add -%>
+    <%= f.text_field :finance_add  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :finance_name -%>
+    <%= f.text_field :finance_name  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :finance_phone -%>
+    <%= f.text_field :finance_phone  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :wine100_user_id -%>
+    <%= f.number_field :wine100_user_id  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.wine100_profiles.admin.wine100_profiles.wine100_profile'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @wine100_profile.company_name_en) %>
+<% end -%>

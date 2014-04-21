@@ -11,6 +11,8 @@ GIT
 PATH
   remote: vendor/extensions
   specs:
+    refinerycms-wine100_profiles (1.0)
+      refinerycms-core (~> 2.0.10)
     refinerycms-wine100_wines (1.0)
       refinerycms-core (~> 2.0.10)
 
@@ -289,6 +291,7 @@ DEPENDENCIES
   rails (= 3.2.13)
   refinerycms (~> 2.0.0)
   refinerycms-i18n (~> 2.0.0)
+  refinerycms-wine100_profiles!
   refinerycms-wine100_wines!
   rvm-capistrano
   sass-rails

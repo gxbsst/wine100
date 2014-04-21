@@ -26,3 +26,6 @@ Refinery::UserGroups::Engine.load_seed
 
 # Added by Refinery CMS Test Papers extension
 Refinery::TestPapers::Engine.load_seed
+
+# Added by Refinery CMS Wine100 Profiles extension
+Refinery::Wine100Profiles::Engine.load_seed

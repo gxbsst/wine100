@@ -1,0 +1,40 @@
+# encoding: utf-8
+# https://github.com/randym/axlsx/blob/master/examples/example.rb
+xlsx_package = Axlsx::Package.new
+xlsx_package.use_shared_strings = true
+wb = xlsx_package.workbook
+wrap_text = wb.styles.add_style({:alignment => {:horizontal => :center, :vertical => :center, :wrap_text => true}}  )
+
+wb.add_worksheet(name: 'all_users') do |sheet|
+  sheet.add_row @titles, :style => wrap_text
+  sheet.styles.add_style :color => "#00FF00"
+  title = sheet.styles.add_style(
+      :fg_color=>"#CCCCCCCC",
+      :sz=>12,
+      :alignment=>{:horizontal => :left, :wrap_text => true, :vertical => :center },
+      :border=> {:style => :thin, :color => "CCCCCCCC"})
+  @users.each do |r|
+    row_data = [
+      r.id, 
+      r.user.email, 
+      (r.company_name_zh + r.company_name_en) , 
+      r.company_add , 
+      r.company_phone, 
+      r.company_website,
+      r.company_wines_count, 
+      r.contact_name, 
+      r.contact_phone, 
+      r.contact_email, 
+      r.contact_job, 
+      r.finance_title,
+      r.finance_tax_num,
+      r.finance_add,
+      r.finance_name,
+      r.finance_phone
+    ]
+
+   
+    sheet.add_row row_data, :height => 30, :style =>  title
+    #Axlsx::STYLE_THIN_BORDER
+  end
+end

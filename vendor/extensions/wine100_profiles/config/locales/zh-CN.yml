@@ -1,0 +1,45 @@
+zh-CN:
+  refinery:
+    plugins:
+      wine100_profiles:
+        title: Wine100 Profiles
+    wine100_profiles:
+      admin:
+        wine100_profiles:
+          actions:
+            create_new: 建立新的 Wine100 Profile
+            reorder: 对 Wine100 Profiles 重新排序
+            reorder_done: 对 Wine100 Profiles 的重新排序结束
+          records:
+            title: Wine100 Profiles
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Wine100 Profiles yet. Click "Add New Wine100 Profile" to add your first wine100 profile.
+            no_items_yet: 目前没有 Wine100 Profiles . 点击 "Add New Wine100 Profile" 创建一个wine100 profile.
+          wine100_profile:
+            view_live_html: 查看 wine100 profile 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 wine100 profile
+            delete: 永久删除 wine100 profile
+      wine100_profiles:
+        show:
+          other: 其他 Wine100 Profiles
+  activerecord:
+    attributes:
+      'refinery/wine100_profiles/wine100_profile':
+        company_name_en: Company Name En
+        company_name_zh: Company Name Zh
+        company_add: Company Add
+        company_phone: Company Phone
+        company_website: Company Website
+        company_wines_count: Company Wines Count
+        company_phone_area_code: Company Phone Area Code
+        contact_name: Contact Name
+        contact_job: Contact Job
+        contact_phone: Contact Phone
+        contact_email: Contact Email
+        finance_title: Finance Title
+        finance_tax_num: Finance Tax Num
+        finance_add: Finance Add
+        finance_name: Finance Name
+        finance_phone: Finance Phone
+        wine100_user_id: Wine100 User

@@ -1,0 +1,32 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(wine100_profile) -%>">
+
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(wine100_profile) -%>">
+  <table width="100%">
+    <tr>
+      <td width="10%"><%= wine100_profile.user.email %></td>
+      <td width="30%"><%= wine100_profile.company_name_zh %></td>
+      <td width="8%"><%= wine100_profile.company_add %></td>
+      <td width="8%"><%= wine100_profile.company_website %></td>
+      <td width="10%"><%= wine100_profile.contact_name %></td>
+      <td width="10%"><%= wine100_profile.contact_phone %></td>
+      <td><%= wine100_profile.contact_email %></td>
+    </tr>
+  </table>
+
+<!--
+  <span class='actions'>
+    
+    <%= link_to refinery_icon_tag("application_go.png"), refinery.wine100_profiles_wine100_profile_path(wine100_profile),
+        :title => t('.view_live_html'),
+        :target => "_blank" %>
+    
+    <%= link_to refinery_icon_tag("application_edit.png"), refinery.edit_wine100_profiles_admin_wine100_profile_path(wine100_profile),
+         :title => t('.edit') %>
+    <%= link_to refinery_icon_tag("delete.png"), refinery.wine100_profiles_admin_wine100_profile_path(wine100_profile),
+        :class => "cancel confirm-delete",
+        :title => t('.delete'),
+        :confirm => t('message', :scope => 'refinery.admin.delete', :title => wine100_profile.company_name_en),
+        :method => :delete %>
+  </span>
+  -->
+</li>

@@ -8,7 +8,6 @@ class Wine100::Profile < ActiveRecord::Base
 	attr_accessible :contact_name, :contact_job,
       :contact_phone,
       :contact_email,
-
       :company_name_en,
       :company_name_zh,
       :company_add,
@@ -16,7 +15,6 @@ class Wine100::Profile < ActiveRecord::Base
       :company_website,
       :company_wines_count,
       :company_phone_area_code,
-
       :finance_title,
       :finance_tax_num,
       :finance_add,

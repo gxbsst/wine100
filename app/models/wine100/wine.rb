@@ -12,7 +12,7 @@ class Wine100::Wine < Refinery::Core::BaseModel
   belongs_to :user, :class_name => 'Wine100::User', :foreign_key => 'wine100_user_id'#, :inverse_of => 'wines'
   belongs_to :image, :foreign_key => 'photo_id'
 
-  delegate :profile, :to => :user
+  delegate :profile, to: :user, allow_nil: true
 
   scope :draft, -> { where(:status => false)}
   scope :online, -> { where(:status => true)}
@@ -46,7 +46,7 @@ class Wine100::Wine < Refinery::Core::BaseModel
 
   # Profile
   def company_name
-    profile.company_name_zh
+    profile.try(:company_name_zh)
   end 
 
 end

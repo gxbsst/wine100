@@ -17,8 +17,8 @@ wb.add_worksheet(name: 'all_users') do |sheet|
     row_data = [
       r.id, 
       r.user.email, 
-      (r.company_name_zh + r.company_name_en) , 
-      r.company_add , 
+      "#{r.company_name_zh}  #{r.company_name_en}" , 
+      r.company_add, 
       r.company_phone, 
       r.company_website,
       r.company_wines_count, 

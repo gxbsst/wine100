@@ -7,7 +7,8 @@ module Refinery
         # EXCEL_TITLES = ['company', 'name',  'region', 'style', 'vintage', 'alcoholicity',  'winery', 'level', 'sweetness', 'is_oak', 'prize_history', 'varieties', 'sales']
         EXCEL_TITLES = [
           '序号', 
-          "Wine Chinese Name\n葡萄酒名称（中文）", 
+          '公司名',
+          "Wine Chinese Name\n葡萄酒名称（中文）",
           "Wine English Name\n葡萄酒名称（英文）", 
           "Type\n类型",
           "Country\n原产国", 

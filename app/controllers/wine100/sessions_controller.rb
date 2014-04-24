@@ -27,7 +27,7 @@ module Wine100
             redirect_to wine100_accounts_path
           end
         else
-          redirect_to new_wine100_profile_path(:for => 'contact')
+          redirect_to new_wine100_profile_path(:for => 'company')
         end
       else
         @user = Wine100::User.new

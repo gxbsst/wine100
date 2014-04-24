@@ -10,13 +10,15 @@
   </div>
 </div>
 
-<div class="control-group">
-<%= f.label :finance_tax_num, "#{t('tax_num')}:" %>
+<% if(I18n.locale == :'zh-CN') %>
+  <div class="control-group">
+  <%= f.label :finance_tax_num, "#{t('tax_num')}:" %>
   <div class="controls">
     <%= f.text_field :finance_tax_num, :placeholder => t('tax_num'), :class => ' span6' %>
-		<span class="red">*</span>
+    <span class="red">*</span>
   </div>
 </div>
+<% end %>
 
 <div class="control-group">
 <%= f.label :finance_add, "#{t('mailing_address')}:" %>

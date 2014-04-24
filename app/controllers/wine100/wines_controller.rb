@@ -5,7 +5,7 @@ module Wine100
 
     before_filter :authenticate_wine100_user
 
-    before_filter :check_profile_completed
+    # before_filter :check_profile_completed
 
     before_filter :get_profile
 

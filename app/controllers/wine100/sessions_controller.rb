@@ -18,12 +18,16 @@ module Wine100
         @profile = @user.profile
         if @profile.present?
           if !@user.profile.company_completed?
+            flash[:error] = '请输入公司信息'
             redirect_to edit_wine100_profile_path(@profile, :for => 'company')
           elsif !@user.profile.contact_completed?
+            flash[:error] = '请输入联系信息'
             redirect_to edit_wine100_profile_path(@profile, :for => 'contact')
           elsif !@user.profile.finance_completed?
+            flash[:error] = '请输入财务信息'
             redirect_to edit_wine100_profile_path(@profile, :for => 'finance')
           else
+            flash[:error] = '请输入公司信息'
             redirect_to wine100_accounts_path
           end
         else

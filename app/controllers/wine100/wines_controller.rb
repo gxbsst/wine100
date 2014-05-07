@@ -27,10 +27,10 @@ module Wine100
       @wine = Wine100::Wine.new(params[:wine100_wine])
       @wine.wine100_user_id = current_user.id
       if @wine.save
-        flash[:notice] = '创建成功'
+        flash[:notice] = t('creating_successful')
         redirect_to wine100_wines_path(:status => 'draft')
       else
-        flash[:error] = '创建失败'
+        flash[:error] = t('createing_failed')
         render :new
       end
     end
@@ -52,10 +52,10 @@ module Wine100
       end
 
       if @wine.update_attributes(params[:wine100_wine])
-        flash[:notice] = '更新成功'
+        flash[:notice] = t('updated_successfully')
         redirect_to wine100_wines_path(:status => 'draft')
       else
-        flash[:error] = '更新失败'
+        flash[:error] = t('updated_failed')
         render(:edit)
       end
     end
@@ -71,9 +71,9 @@ module Wine100
 
 
       if @wine.destroy
-        flash[:notice] = '删除成功'
+        flash[:notice] = t('deleted_successful')
       else
-        flash[:error] = '删除失败'
+        flash[:error] = t('deleted_failed')
       end
       redirect_to wine100_wines_path(:status => 'draft')
     end

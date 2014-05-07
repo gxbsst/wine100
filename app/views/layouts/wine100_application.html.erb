@@ -65,7 +65,7 @@
 
 
         <%= select_tag "lang", options_for_select( [["中文", wine100_languages_path(:locale => :'zh-CN')], ["EN",  wine100_languages_path(:locale => :en)]], [@selected]) %>
-
+        <button type="button" class="btn btn-primary"><%= t('official_website') %></button>
         <script>
             $(function(){
               // bind change event to select

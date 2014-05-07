@@ -1,3 +1,6 @@
 wines:
-  styles: ['红葡萄酒', '白葡萄酒', '起泡酒', '甜葡萄酒', '加强酒', '其他']
-    
+  en:
+   styles: ['Red', 'White', 'Sparkling', 'Sweet', 'Fortified', 'Other']
+  zh:
+   styles: ['红葡萄酒', '白葡萄酒', '起泡酒', '甜葡萄酒', '加强酒', '其他']
+

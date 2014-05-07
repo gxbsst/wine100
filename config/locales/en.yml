@@ -8,7 +8,7 @@ en:
   wine100_challenge_wine_entry: WINE100 Challenge Wine Entry 
   how_to_enter: How To Enter?
   complete_company_information: Complete Company's Information
-  input_the_information_wine: Input The Information Wine
+  input_the_information_wine: Enter the wine information
   check_the_information: Check The Information
   complete_entry: Complete Entry
   hi: Hi,
@@ -17,7 +17,7 @@ en:
   please_input_your_email: Please input your email
   confirm_the_password: confirm the password
   register_completed: 'Register completed, please complete the detail contact information'
-  setting: Setting
+  setting: Settings
   company_information: Company information
   contact_information: Contact information
   invoice_information: Invoice information
@@ -58,12 +58,12 @@ en:
   alcohol_0: alcohol e.g 12.5
   grape_variety: Grape variety
   if_more_than: 'If more than one grape variety is used, please click on the "add grape varieties".'
-  add_the_grape_varieties: Add the grape varieties
+  add_the_grape_varieties: Add grape varieties
   retail_price: Retail price
   picture: Picture
   browse: browse
   maximum_images: Maximum 5MB of PNG, JPG, GIF images.
-  following_optional: The following information are optional
+  following_optional: The following information is optional
   add_sales_channels: Add Sales Channels
   delete: delete
   sales_channels: Sales channels
@@ -77,14 +77,14 @@ en:
   entry_wine_list: Entry Wine List
   continue_to_add_the_entries: Continue to add the entries
   confirm_the_entry: Confirm the entry 
-  after_complete: 'After complete entry wine information, please click "Complete entry"'
+  after_complete: 'After completing to enter the wine information, please click "Confirm the entry"'
   wine_information: Wine's information
-  operation: Operation
+  operation: Operations
   edit: edit
   delete: delete
   enter_the_competition: Enter the competition
   information: information
-  all_infomartion_completed: 'All infomartion completed! Entry wines will be sumbitted to WINE100. Please double confirm, no more modification after clicking "confirm".'
+  all_infomartion_completed: 'All information completed! Entry wines will be submitted to WINE100. Please double confirm, no more modifications after clicking "confirm".'
   cancel: Cancel
   all_information_was_sumbitted: All information was sumbitted to WINE100!
   change_the_password: change the password
@@ -101,3 +101,21 @@ en:
   enter_your_email: Please enter your email address.
   find_password: Find Password
   percentage: Percentage
+  successful_registration: Successful registration, please complete the registration information
+  red_wine: Red
+  white_wine: White
+  sparkling_wine: Sparkling
+  sweet_wine: Sweet
+  fortified_wine: Fortified
+  other: Other
+  official_website: Return to the official website
+  your_company_information: Please enter your company information
+  the_contact_information: Please enter the contact information
+  financial_information: Please enter invoice information
+  updated_successfully: Updated successfully
+  updated_failed: Updated Failed
+  creating_successful: Creating Successful
+  createing_failed: Creating Failed
+  deleted_successful: Deleted Successful
+  deleted_failed: Deleted Failed
+

@@ -28,7 +28,7 @@ module Wine100
 
 		def update
 			if @profile.update_attributes(params[:wine100_profile])
-				flash[:notice] = '更新成功'
+				flash[:notice] = t('updated_successfully')
 				case params[:for]
 				when 'company'
 					step = 'contact'
@@ -42,7 +42,7 @@ module Wine100
 				redirect_to edit_wine100_profile_path(@profile, :for => step)
 				
 			else
-				flash[:error] = '更新失败'
+				flash[:error] = t('updated_failed')
 				render :edit
 			end
 		end

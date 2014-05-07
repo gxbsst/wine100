@@ -17,10 +17,10 @@ module Wine100
 		def update
 			@user = current_user
 		 if @user.update_attributes(params[:wine100_user])
-		 	flash[:notice] = '更新成功'
+		 	flash[:notice] = t('updated_successfully')
 		 	redirect_to wine100_accounts_path
 		 else
-		 	flash[:notice] = '更新失败'
+		 	flash[:notice] = t('updated_failed')
 		 	render :edit
 		 end
 		end

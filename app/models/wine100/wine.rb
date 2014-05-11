@@ -17,6 +17,10 @@ class Wine100::Wine < Refinery::Core::BaseModel
   scope :draft, -> { where(:status => false)}
   scope :online, -> { where(:status => true)}
 
+  def status_text
+   self.status ? '参赛' : '草稿'
+  end
+
   def region
    "#{region_1} - #{region_2} - #{region_3}" 
   end

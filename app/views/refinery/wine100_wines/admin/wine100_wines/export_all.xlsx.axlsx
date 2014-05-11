@@ -16,7 +16,8 @@ wb.add_worksheet(name: 'all_wines') do |sheet|
   @wines.each do |r|
     is_oak = r.is_oak? ? '是' : '不是'
     row_data = [
-      r.id, 
+      r.id,
+      r.status_text,
       r.company_name,
       r.name_zh, 
       r.name_en , 

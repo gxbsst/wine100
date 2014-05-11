@@ -94,3 +94,4 @@ vendor/extensions/**/spec/dummy
 .gitkeep
 lib/tasks/data/*
 public/uploads
+atlassian-ide-plugin.xml

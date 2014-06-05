@@ -37,23 +37,23 @@ module Wine100
 
     def edit
       @wine = current_user.wines.find(params[:id])
-      if @wine.status
-        flash[:error] = '该酒已经是参赛用酒， 不能编辑， 如果需要更新， 请联系系统管理员。'
-        redirect_to wine100_wines_path(:status => :on)
-      end
+      # if @wine.status
+      #   flash[:error] = '该酒已经是参赛用酒， 不能编辑， 如果需要更新， 请联系系统管理员。'
+      #   redirect_to wine100_wines_path(:status => :on)
+      # end
     end
 
     def update
       @wine = current_user.wines.find(params[:id])
 
-      if @wine.status
-        flash[:error] = '该酒已经是参赛用酒， 不能编辑， 如果需要更新， 请联系系统管理员。'
-        redirect_to wine100_wines_path(:status => :on)
-      end
+      # if @wine.status
+      #   flash[:error] = '该酒已经是参赛用酒， 不能编辑， 如果需要更新， 请联系系统管理员。'
+      #   redirect_to wine100_wines_path(:status => :on)
+      # end
 
       if @wine.update_attributes(params[:wine100_wine])
         flash[:notice] = t('updated_successfully')
-        redirect_to wine100_wines_path(:status => 'draft')
+        redirect_to wine100_wines_path(:status => @wine.status)
       else
         flash[:error] = t('updated_failed')
         render(:edit)
@@ -63,11 +63,11 @@ module Wine100
     def destroy 
       @wine = Wine100::Wine.find(params[:id])
 
-      if @wine.status
-        flash[:error] = '该酒已经是参赛用酒， 不能删除， 如果需要删除， 请联系系统管理员。'
-        redirect_to wine100_wines_path(:status => :on)
-        return
-      end
+      # if @wine.status
+      #   flash[:error] = '该酒已经是参赛用酒， 不能删除， 如果需要删除， 请联系系统管理员。'
+      #   redirect_to wine100_wines_path(:status => :on)
+      #   return
+      # end
 
 
       if @wine.destroy
